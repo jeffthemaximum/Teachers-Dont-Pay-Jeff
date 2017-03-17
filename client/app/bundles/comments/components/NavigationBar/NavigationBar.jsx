@@ -9,7 +9,8 @@ import CommentsCount from './CommentsCount';
 import * as paths from '../../constants/paths';
 
 const NavigationBar = (props) => {
-  const { commentsCount, pathname } = props;
+
+  const { commentsCount, pathname, data } = props;
 
   /* eslint-disable new-cap */
   return (
@@ -31,7 +32,7 @@ const NavigationBar = (props) => {
         </div>
         <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul className="nav navbar-nav">
-            <li className={classNames({ active: (pathname === paths.ROUTER_PATH) })}>
+            {/*<li className={classNames({ active: (pathname === paths.ROUTER_PATH) })}>
               <a href={paths.ROUTER_PATH}>React Router Demo</a>
             </li>
             <li className={classNames({ active: (pathname === paths.NO_ROUTER_PATH) })}>
@@ -60,7 +61,16 @@ const NavigationBar = (props) => {
                }
               >Forum</a>
             </li>
-            {_.isNumber(commentsCount) && CommentsCount({ commentsCount })}
+            {_.isNumber(commentsCount) && CommentsCount({ commentsCount })}*/}
+            { data.loggedIn ?
+              <li>
+                <a rel="nofollow" data-method="delete" href="/users/sign_out">Logout</a>
+              </li>
+              :
+              <li>
+                <a href="/users/sign_in">Login</a>
+              </li>
+            }
           </ul>
         </div>
       </div>

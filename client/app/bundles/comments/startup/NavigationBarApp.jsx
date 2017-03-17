@@ -23,14 +23,15 @@ export default (_props, railsContext) => {
   } else if (pathname === paths.NO_ROUTER_PATH) {
     store = ReactOnRails.getStore('commentsStore', false);
   } else {
+    let data = _props;
     return (
-      <NavigationBar {...{ pathname }} />
+      <NavigationBar {...{ pathname, data }} />
     );
   }
 
   return (
     <Provider store={store}>
-      <NavigationBarContainer />
+      <NavigationBarContainer data={_props}/>
     </Provider>
   );
 };

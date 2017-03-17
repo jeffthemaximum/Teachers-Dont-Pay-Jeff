@@ -24,8 +24,21 @@
 </head>
 <body>
 
-<%= react_component "NavigationBarApp" %>
+<%= react_component(
+  "NavigationBarApp",
+  props: {
+    loggedIn: user_signed_in?
+  }, 
+  prerender: false) 
+%>
+
 <div class="container">
+  <% if notice %>
+    <div class="alert alert-info" role="alert"><%= notice%></div>
+  <% end %>
+  <% if alert %>
+    <div class="alert alert-warning" role="alert"><%= alert%></div>
+  <% end %>
   <%= yield %>
 </div>
 
