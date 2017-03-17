@@ -35,6 +35,9 @@ class PagesController < ApplicationController
   def simple
   end
 
+  def timeline
+  end
+
   private
 
   def set_comments

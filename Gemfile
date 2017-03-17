@@ -89,6 +89,9 @@ group :development, :test do
   ################################################################################
   # Color console output
   gem "rainbow"
+
+  # Jeff
+  gem 'rb-readline'
 end
 
 group :test  do

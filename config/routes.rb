@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   root "pages#index"
 
+  get "/timeline", to: "pages#timeline"
+
   get "simple", to: "pages#simple"
   get "no-router", to: "pages#no_router"
 

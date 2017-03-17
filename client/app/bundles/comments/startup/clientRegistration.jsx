@@ -7,6 +7,8 @@ import routerCommentsStore from '../store/routerCommentsStore';
 import commentsStore from '../store/commentsStore';
 import NavigationBarApp from './NavigationBarApp';
 
+import EventForm from '../components/Timeline/EventForm';
+
 import { addLocaleData } from 'react-intl';
 import en from 'react-intl/locale-data/en';
 import de from 'react-intl/locale-data/de';
@@ -25,6 +27,7 @@ ReactOnRails.register({
   RouterApp,
   NavigationBarApp,
   SimpleCommentScreen,
+  EventForm,
 });
 
 ReactOnRails.registerStore({
