@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170317173426) do
+ActiveRecord::Schema.define(version: 20170317222550) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,13 +28,20 @@ ActiveRecord::Schema.define(version: 20170317173426) do
     t.integer  "timeline_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "year"
+    t.integer  "month"
+    t.integer  "day"
+    t.integer  "hour"
+    t.integer  "minute"
+    t.datetime "date"
     t.index ["timeline_id"], name: "index_events_on_timeline_id", using: :btree
   end
 
   create_table "timelines", force: :cascade do |t|
     t.string   "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "share_token"
   end
 
   create_table "user_timeline_relationships", force: :cascade do |t|

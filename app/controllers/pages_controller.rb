@@ -36,6 +36,7 @@ class PagesController < ApplicationController
   end
 
   def timeline
+    @timeline = Timeline.create
   end
 
   private
