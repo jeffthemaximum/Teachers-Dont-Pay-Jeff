@@ -27,7 +27,7 @@ const NavigationBar = (props) => {
             <span className="icon-bar" />
             <span className="icon-bar" />
           </button>
-          <a className="navbar-brand" href="http://www.shakacode.com">ShakaCode</a>
+          <a className="navbar-brand" href="/">JeffLine</a>
         </div>
         <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul className="nav navbar-nav">

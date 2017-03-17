@@ -7,30 +7,26 @@ export default class EventForm extends BaseComponent {
   render() {
     return (
       <form>
-        <div className="row">
-          <div className="large-12 columns">
-            <label>Input Label
-              <input 
-                onChange={this.props.onTitleInputChange} 
-                value={this.props.titleValue} 
-                type="text" 
-                placeholder="large-12.columns" 
-              />
-            </label>
-          </div>
+       <div class="form-group">
+          <label for="eventTitle">Input Label</label>
+          <input 
+            onChange={this.props.onTitleInputChange} 
+            value={this.props.titleValue} 
+            type="text" 
+            placeholder="large-12.columns"
+            className="form-control"
+            id="eventTitle"
+          />
         </div>
-        <div className="row">
-          <div className="large-12 columns">
-            <label>Textarea Label
-              <textarea placeholder="small-12.columns"></textarea>
-            </label>
-          </div>
+        <div class="form-group">
+          <label for="eventDescription">Textarea Label</label>
+          <textarea 
+            placeholder="small-12.columns"
+            id="eventDescription"
+            className="form-control"
+          ></textarea>
         </div>
-        <div className="row">
-          <div className="large-12 columns">
-            <a href="#" className="button">Default Button</a>
-          </div>
-        </div>
+         <button type="submit" className="btn btn-primary">Submit</button>
       </form>
     )
   }
