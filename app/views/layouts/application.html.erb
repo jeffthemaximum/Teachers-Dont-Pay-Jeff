@@ -34,11 +34,16 @@
 
 <div class="container">
   <% if notice %>
-    <div class="alert alert-info" role="alert"><%= notice%></div>
+    <div class="alert alert-info" role="alert"><%= notice%>
+      <a href="#" class="close" data-dismiss="alert">&#215;</a>
+    </div>
   <% end %>
   <% if alert %>
-    <div class="alert alert-warning" role="alert"><%= alert%></div>
+    <div class="alert alert-warning" role="alert"><%= alert%>
+      <a href="#" class="close" data-dismiss="alert">&#215;</a>
+    </div>
   <% end %>
+
   <%= yield %>
 </div>
 
