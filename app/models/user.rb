@@ -4,5 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :timelines
+  has_many :user_timeline_relationships
+  has_many :timelines, :through => :user_timeline_relationships do
+    def creator
+      where('user_timeline_relationships.primary = ?', true)
+    end
+  end
 end
