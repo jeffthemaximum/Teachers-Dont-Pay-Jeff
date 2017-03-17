@@ -16,6 +16,7 @@ module.exports = {
   entry: [
     'babel-polyfill',
     './app/bundles/comments/startup/serverRegistration',
+    './app/bundles/timeline/startup/serverRegistration',
   ],
   output: {
     filename: 'server-bundle.js',
