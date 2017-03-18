@@ -1,7 +1,7 @@
 import ReactOnRails from 'react-on-rails';
 
-import EventForm from '../components/EventForm'
+import TimeLineApp from '../components/TimeLineApp'
 
 ReactOnRails.register({
-  EventForm
+  TimeLineApp
 });

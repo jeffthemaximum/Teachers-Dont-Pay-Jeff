@@ -8,7 +8,7 @@ const EventForm = React.createClass ({
 
   getInitialState(){
     return({
-      events: [],
+      events: this.props.data.events,
       title: "",
       description: "",
       year: "",
@@ -17,7 +17,7 @@ const EventForm = React.createClass ({
       hour: "",
       minute: "",
       ampm: "",
-      share_token: this.props.shareToken,
+      share_token: this.props.data.shareToken,
       errors : {
         title: false,
         year: false,
@@ -78,22 +78,6 @@ const EventForm = React.createClass ({
     return isErrors;
   },
 
-  sortEvents(){
-    let events = this.state.events;
-    events = events.sort(function(a,b){
-      // Turn your strings into dates, and then subtract them
-      // to get a value that is either negative, positive, or zero.
-      return new Date(b.date) - new Date(a.date);
-    });
-    this.setState({events: events.reverse()});
-  },
-
-  updateEvents(event){
-    let events = this.state.events;
-    events.push(event);
-    this.setState({events: events}, this.sortEvents());
-  },
-
   clearForm(){
     this.setState({
       title: "",
@@ -128,11 +112,11 @@ const EventForm = React.createClass ({
       axios.post('/events', data, requestConfig)
       .then(function(response){
         let event = response.data;
-        this.updateEvents(event);
+        this.props.updateEvents(event);
         this.clearForm();
       }.bind(this))
       .catch(function(error){
-        console.log(response);
+        console.log(error);
       })
     }
   },

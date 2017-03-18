@@ -1,8 +1,9 @@
 <p>timeline</p>
 <%= react_component(
-  "EventForm",
+  "TimeLineApp",
   props: {
-    shareToken: @timeline.share_token
+    shareToken: @timeline.share_token,
+    events: @timeline.events
   }, 
   prerender: false) 
 %>
