@@ -1,11 +1,6 @@
 import React from 'react';
-import moment from 'moment';
 
 const TimeLineEvent = React.createClass({
-  formatDate(){
-    return moment(this.props.event.date).format('MMMM Do YYYY, h:mm:ss a');
-  },
-
   render(){
     return (
       <div className="cd-timeline-block">
@@ -16,7 +11,16 @@ const TimeLineEvent = React.createClass({
         <div className="cd-timeline-content">
           <h2>{this.props.event.title}</h2>
           <p>{this.props.event.description}</p>
-          <span className="cd-date">{this.formatDate()}</span>
+          <span className="cd-date">{this.props.formatDate()}</span>
+
+          <div className="buttons">
+            <button type="button" className="btn btn-default btn-xs">
+              <span className="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit
+            </button>
+            <button type="button" className="btn btn-default btn-xs">
+              <span className="glyphicon glyphicon-trash" aria-hidden="true"></span> Delete
+            </button>
+          </div>
         </div>
       </div>
     )

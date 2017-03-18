@@ -1,6 +1,6 @@
 import React from 'react';
 
-import TimeLineEvent from './TimeLineEvent';
+import TimeLineEventApp from './TimeLineEventApp';
 
 const TimeLine = React.createClass({
   getInitialState(){
@@ -11,7 +11,7 @@ const TimeLine = React.createClass({
 
   render(){
     var eventComponents = this.state.events.map(function(event, i){
-      return <TimeLineEvent event={event} key={i}/>
+      return <TimeLineEventApp event={event} key={i}/>
     })
     return (
       <div>
