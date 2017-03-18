@@ -27,7 +27,13 @@ const TimeLineApp = React.createClass({
 
   updateEvents(event){
     let events = this.state.events;
-    events.push(event);
+    let elementInArray = $.grep(this.state.events, function(e){ return e.id == event.id; });
+    if (elementInArray.length > 0) {
+      let eventIndex = events.indexOf(elementInArray[0]);
+      events[eventIndex] = event;
+    } else {
+      events.push(event);
+    }
     this.setState({events: events}, this.sortEvents());
   },
 
@@ -41,6 +47,7 @@ const TimeLineApp = React.createClass({
         />
         <TimeLine
           data={this.state}
+          updateEvents={this.updateEvents}
         />
       </div>
     )

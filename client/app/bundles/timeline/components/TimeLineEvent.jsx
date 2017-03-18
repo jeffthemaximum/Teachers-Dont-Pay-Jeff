@@ -14,7 +14,7 @@ const TimeLineEvent = React.createClass({
           <span className="cd-date">{this.props.formatDate()}</span>
 
           <div className="buttons">
-            <button type="button" className="btn btn-default btn-xs">
+            <button onClick={this.props.toggleEditState} type="button" className="btn btn-default btn-xs">
               <span className="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit
             </button>
             <button type="button" className="btn btn-default btn-xs">

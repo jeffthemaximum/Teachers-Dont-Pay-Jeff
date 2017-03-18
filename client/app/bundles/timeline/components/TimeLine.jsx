@@ -11,14 +11,15 @@ const TimeLine = React.createClass({
 
   render(){
     var eventComponents = this.state.events.map(function(event, i){
-      return <TimeLineEventApp event={event} key={i}/>
-    })
+      return <TimeLineEventApp 
+               updateEvents={this.props.updateEvents} 
+               share_token={this.props.data.share_token} 
+               event={event} key={i}
+             />
+    }.bind(this));
     return (
       <div>
-
-          <h1>Responsive Vertical Timeline</h1>
-
-
+        <h1>Responsive Vertical Timeline</h1>
         <section id="cd-timeline" className="cd-container">
           {eventComponents}
         </section>
