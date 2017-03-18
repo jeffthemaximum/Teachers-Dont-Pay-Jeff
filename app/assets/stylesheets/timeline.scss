@@ -94,13 +94,13 @@ header h1 {
   margin-bottom: 0;
 }
 @media only screen and (min-width: 960px) {
-  .cd-timeline-block {
+  .timeline-event-container {
     margin: 4em 0;
   }
-  .cd-timeline-block:first-child {
+  .timeline-event-container:first-child {
     margin-top: 0;
   }
-  .cd-timeline-block:last-child {
+  .timeline-event-container:last-child {
     margin-bottom: 0;
   }
 }
@@ -219,6 +219,14 @@ header h1 {
   padding: 1em;
   box-shadow: 0 3px 0 #d7e4ed;
   border: solid 1px $brand-blue;
+
+  .buttons {
+    margin-top: 1px;
+    margin-right: 2px;
+    position:absolute;
+    top:0;
+    right:0;
+  }
 }
 .cd-timeline-content:after {
   content: "";
@@ -301,10 +309,10 @@ header h1 {
     font-size: 16px;
     font-size: 1rem;
   }
-  .cd-timeline-block:nth-child(even) .cd-timeline-content {
+  .timeline-event-container:nth-child(even) .cd-timeline-content {
     float: right;
   }
-  .cd-timeline-block:nth-child(even) .cd-timeline-content::before {
+  .timeline-event-container:nth-child(even) .cd-timeline-content::before {
     top: 24px;
     left: auto;
     right: 100%;
@@ -314,7 +322,7 @@ header h1 {
   .cd-timeline-block:nth-child(even) .cd-timeline-content .cd-read-more {
     float: right;
   }
-  .cd-timeline-block:nth-child(even) .cd-timeline-content .cd-date {
+  .timeline-event-container:nth-child(even) .cd-timeline-content .cd-date {
     left: auto;
     right: 122%;
     text-align: right;
