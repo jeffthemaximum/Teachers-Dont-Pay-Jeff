@@ -17,7 +17,7 @@ const EventForm = React.createClass ({
       hour: "",
       minute: "",
       ampm: "",
-      share_token: this.props.data.shareToken,
+      share_token: this.props.data.share_token,
       errors : {
         title: false,
         year: false,
@@ -88,7 +88,6 @@ const EventForm = React.createClass ({
       hour: "",
       minute: "",
       ampm: "",
-      share_token: this.props.shareToken,
       errors : {
         title: false,
         year: false,

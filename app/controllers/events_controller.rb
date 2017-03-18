@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   def create
     @event = create_event
     @event = create_event_datetime
-
+    @event = connect_to_timeline
     if @event.save
       render json: @event
     else
@@ -12,6 +12,13 @@ class EventsController < ApplicationController
 
 
   private
+
+  def connect_to_timeline
+    timeline_share_token = params[:event][:share_token]
+    timeline = Timeline.find_by(share_token: timeline_share_token)
+    @event.timeline = timeline
+    return @event
+  end
 
   def create_event
     # TODO error handling if title or text is missing
