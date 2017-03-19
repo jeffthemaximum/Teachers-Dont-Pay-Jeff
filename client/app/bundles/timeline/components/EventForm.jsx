@@ -3,6 +3,9 @@ import ReactOnRails from 'react-on-rails';
 import axios from 'axios';
 
 import BaseComponent from 'libs/components/BaseComponent';
+import ShareApp from './ShareApp';
+import EditApp from './EditApp';
+import EditShareApp from './EditShareApp';
 
 const EventForm = React.createClass ({
 
@@ -232,10 +235,13 @@ const EventForm = React.createClass ({
               </select> 
             </div>
           </div>
-          
-          
         </div>
-         <button onClick={this.onSubmit} className="btn btn-primary">Submit</button>
+
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button onClick={this.onSubmit} className="btn btn-primary">Submit</button>
+          <EditShareApp data={this.props.data} />
+        </div>
+
       </form>
     )
   }

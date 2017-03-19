@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170319011950) do
+ActiveRecord::Schema.define(version: 20170319150438) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(version: 20170319011950) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "share_token"
+    t.string   "edit_token"
+    t.index ["edit_token"], name: "index_timelines_on_edit_token", using: :btree
     t.index ["share_token"], name: "index_timelines_on_share_token", using: :btree
   end
 

@@ -8,10 +8,17 @@ class Timeline < ApplicationRecord
   end
 
   before_create :generate_share_token
+  before_create :generate_edit_token
 
   def generate_share_token
     begin
       self.share_token = SecureRandom.base64(4).gsub("/","").gsub(/[=+$]/,"")
     end while Timeline.where("lower(share_token) = lower(?)", self.share_token).exists?
+  end
+
+  def generate_edit_token
+    begin
+      self.edit_token = SecureRandom.base64(5).gsub("/","").gsub(/[=+$]/,"")
+    end while Timeline.where("lower(edit_token) = lower(?)", self.edit_token).exists?
   end
 end

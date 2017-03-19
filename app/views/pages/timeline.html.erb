@@ -3,7 +3,11 @@
   "TimeLineApp",
   props: {
     shareToken: @timeline.share_token,
-    events: @timeline.events.order(:date)
+    events: @timeline.events.order(:date),
+    shareLink: timeline_url(@timeline.share_token),
+    editLink: edit_timeline_url(@timeline.edit_token),
+    sharing: @sharing,
+    editing: @editing
   }, 
   prerender: false) 
 %>

@@ -11,7 +11,9 @@ const TimeLineApp = React.createClass({
   getInitialState(){
     return({
       events: this.props.events,
-      share_token: this.props.shareToken
+      share_token: this.props.shareToken,
+      shareLink: this.props.shareLink,
+      editLink: this.props.editLink
     })
   },
 
@@ -56,16 +58,28 @@ const TimeLineApp = React.createClass({
   render(){
     return (
       <div>
-        <EventForm
-          data={this.state}
-          updateEvents={this.updateEvents}
-          sortEvents={this.sortEvents}
-        />
-        <TimeLine
-          data={this.state}
-          updateEvents={this.updateEvents}
-          deleteEvent={this.deleteEvent}
-        />
+        { this.props.sharing === true ?
+        
+          <TimeLine
+            data={this.state}
+            updateEvents={this.updateEvents}
+            deleteEvent={this.deleteEvent}
+          />
+
+          :
+          <div>
+            <EventForm
+              data={this.state}
+              updateEvents={this.updateEvents}
+              sortEvents={this.sortEvents}
+            />
+            <TimeLine
+              data={this.state}
+              updateEvents={this.updateEvents}
+              deleteEvent={this.deleteEvent}
+            />
+          </div>
+        }
       </div>
     )
   }
