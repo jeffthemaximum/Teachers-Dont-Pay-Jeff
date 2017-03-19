@@ -1200,6 +1200,11 @@
       "resolved": "https://registry.npmjs.org/cookie-signature/-/cookie-signature-1.0.6.tgz",
       "dev": true
     },
+    "copy-to-clipboard": {
+      "version": "3.0.5",
+      "from": "copy-to-clipboard@>=3.0.0 <4.0.0",
+      "resolved": "https://registry.npmjs.org/copy-to-clipboard/-/copy-to-clipboard-3.0.5.tgz"
+    },
     "core-js": {
       "version": "2.4.1",
       "from": "core-js@>=2.4.0 <3.0.0",
@@ -4646,7 +4651,7 @@
     },
     "react": {
       "version": "15.4.1",
-      "from": "react@>=15.4.1 <16.0.0",
+      "from": "https://registry.npmjs.org/react/-/react-15.4.1.tgz",
       "resolved": "https://registry.npmjs.org/react/-/react-15.4.1.tgz"
     },
     "react-addons-css-transition-group": {
@@ -4664,6 +4669,11 @@
       "version": "0.30.7",
       "from": "react-bootstrap@>=0.30.7 <0.31.0",
       "resolved": "https://registry.npmjs.org/react-bootstrap/-/react-bootstrap-0.30.7.tgz"
+    },
+    "react-copy-to-clipboard": {
+      "version": "4.2.3",
+      "from": "react-copy-to-clipboard@>=4.2.3 <5.0.0",
+      "resolved": "https://registry.npmjs.org/react-copy-to-clipboard/-/react-copy-to-clipboard-4.2.3.tgz"
     },
     "react-deep-force-update": {
       "version": "1.0.1",
@@ -5380,6 +5390,11 @@
       "version": "1.0.2",
       "from": "to-fast-properties@>=1.0.1 <2.0.0",
       "resolved": "https://registry.npmjs.org/to-fast-properties/-/to-fast-properties-1.0.2.tgz"
+    },
+    "toggle-selection": {
+      "version": "1.0.5",
+      "from": "toggle-selection@>=1.0.3 <2.0.0",
+      "resolved": "https://registry.npmjs.org/toggle-selection/-/toggle-selection-1.0.5.tgz"
     },
     "token-stream": {
       "version": "0.0.1",
