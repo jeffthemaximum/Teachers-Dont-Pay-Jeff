@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170318010413) do
+ActiveRecord::Schema.define(version: 20170319011950) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,14 +26,16 @@ ActiveRecord::Schema.define(version: 20170318010413) do
     t.string   "title"
     t.string   "description"
     t.integer  "timeline_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.integer  "year"
     t.integer  "month"
     t.integer  "day"
     t.integer  "hour"
     t.integer  "minute"
     t.datetime "date"
+    t.boolean  "hidden",      default: false
+    t.index ["hidden"], name: "index_events_on_hidden", using: :btree
     t.index ["timeline_id"], name: "index_events_on_timeline_id", using: :btree
   end
 

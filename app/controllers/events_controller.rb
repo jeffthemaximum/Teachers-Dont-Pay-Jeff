@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+
+  skip_before_filter :verify_authenticity_token, :only => :destroy
   
   def create
     @event = create_event
@@ -17,6 +19,15 @@ class EventsController < ApplicationController
     @event = edit_event_datetime
 
     if @event.save
+      render json: @event
+    else
+      render json: @event.errors, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @event = find_event
+    if @event.hide!
       render json: @event
     else
       render json: @event.errors, status: :unprocessable_entity

@@ -78,7 +78,7 @@ header h1 {
   }
 }
 
-.cd-timeline-block {
+.timeline-event-container {
   position: relative;
   margin: 2em 0;
 }
@@ -87,10 +87,10 @@ header h1 {
   display: table;
   clear: both;
 }
-.cd-timeline-block:first-child {
+.timeline-event-container:first-child {
   margin-top: 0;
 }
-.cd-timeline-block:last-child {
+.timeline-event-container:last-child {
   margin-bottom: 0;
 }
 @media only screen and (min-width: 960px) {

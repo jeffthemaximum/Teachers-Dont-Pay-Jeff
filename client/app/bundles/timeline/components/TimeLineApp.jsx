@@ -37,6 +37,22 @@ const TimeLineApp = React.createClass({
     this.setState({events: events}, this.sortEvents());
   },
 
+  deleteEvent(event){
+    let events = this.state.events;
+    // find event in events by id
+    let elementInArray = $.grep(this.state.events, function(e){ return e.id == event.id; });
+    if (elementInArray.length > 0) {
+      // get event index in events
+      let eventIndex = events.indexOf(elementInArray[0]);
+      if (eventIndex > -1) {
+        events.splice(eventIndex, 1);
+      }
+    }
+    this.setState({events: events}, this.sortEvents());
+    // hacky solution to stop buttons from showing on timeline events
+    document.getElementById('dummy').click();
+  },
+
   render(){
     return (
       <div>
@@ -48,6 +64,7 @@ const TimeLineApp = React.createClass({
         <TimeLine
           data={this.state}
           updateEvents={this.updateEvents}
+          deleteEvent={this.deleteEvent}
         />
       </div>
     )

@@ -34,8 +34,10 @@ const TimeLineEventApp = React.createClass({
           :
             <TimeLineEvent 
               event={this.props.event} 
+              share_token={this.props.share_token}
               formatDate={this.formatDate} 
               toggleEditState={this.toggleEditState}
+              deleteEvent={this.props.deleteEvent}
             />
         }
       </div>

@@ -13,8 +13,10 @@ const TimeLine = React.createClass({
     var eventComponents = this.state.events.map(function(event, i){
       return <TimeLineEventApp 
                updateEvents={this.props.updateEvents} 
+               deleteEvent={this.props.deleteEvent}
                share_token={this.props.data.share_token} 
-               event={event} key={i}
+               event={event} 
+               key={i}
              />
     }.bind(this));
     return (

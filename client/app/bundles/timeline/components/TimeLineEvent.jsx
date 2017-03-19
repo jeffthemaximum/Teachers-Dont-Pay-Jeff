@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import axios from 'axios';
+import ReactOnRails from 'react-on-rails';
 
 const TimeLineEvent = React.createClass({
   getInitialState() {
@@ -33,6 +35,34 @@ const TimeLineEvent = React.createClass({
     }
   },
 
+  onDeleteClick(){
+    const requestConfig = {
+      responseType: 'json',
+      headers: ReactOnRails.authenticityHeaders(),
+    };
+    let url = "/events/" + this.props.event.id;
+    let data = {
+      "_method":"delete",
+      "event": {
+        "share_token": this.props.share_token,
+      }
+    }
+
+     var promise = $.ajax({
+        type: "POST",
+        url: url,
+        dataType: "json",
+        data: data,
+        headers: ReactOnRails.authenticityHeaders()
+    });
+    promise.then(function(response){
+      this.props.deleteEvent(response);
+    }.bind(this))
+    promise.catch(function(error){
+      console.log(error);
+    })
+  },
+
   render(){
     return (
       <div className="cd-timeline-block">
@@ -44,7 +74,7 @@ const TimeLineEvent = React.createClass({
           <h2>{this.props.event.title}</h2>
           <p>{this.props.event.description}</p>
           <span className="cd-date">{this.props.formatDate()}</span>
-          
+
           {
             this.state.showButtons &&
 
@@ -52,7 +82,7 @@ const TimeLineEvent = React.createClass({
                 <button onClick={this.props.toggleEditState} type="button" className="btn btn-default btn-xs">
                   <span className="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit
                 </button>
-                <button type="button" className="btn btn-default btn-xs">
+                <button onClick={this.onDeleteClick} type="button" className="btn btn-default btn-xs">
                   <span className="glyphicon glyphicon-trash" aria-hidden="true"></span> Delete
                 </button>
               </div>
