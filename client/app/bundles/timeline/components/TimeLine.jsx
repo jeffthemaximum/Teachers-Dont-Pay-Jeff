@@ -21,7 +21,7 @@ const TimeLine = React.createClass({
     }.bind(this));
     return (
       <div>
-        <h1>Responsive Vertical Timeline</h1>
+        <h1>My Timeline</h1>
         <section id="cd-timeline" className="cd-container">
           {eventComponents}
         </section>
