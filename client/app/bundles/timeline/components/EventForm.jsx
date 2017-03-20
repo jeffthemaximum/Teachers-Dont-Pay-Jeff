@@ -170,7 +170,7 @@ const EventForm = React.createClass ({
                 Month
               </label>
               <select value={this.state.month} onChange={this.onMonthInputChange} className="form-control" id='event-month'>
-                <option selected value=''>--Select Month--</option>
+                <option value=''>--Select Month--</option>
                 <option value='1'>Janaury</option>
                 <option value='2'>February</option>
                 <option value='3'>March</option>
@@ -229,7 +229,7 @@ const EventForm = React.createClass ({
                 AM / PM
               </label>
               <select value={this.state.ampm} onChange={this.onAmpmInputChange} className="form-control" id='event-ampm'>
-                <option selected value=''>--AM / PM--</option>
+                <option value=''>--AM / PM--</option>
                 <option value='1'>AM</option>
                 <option value='2'>PM</option>
               </select> 
@@ -237,7 +237,7 @@ const EventForm = React.createClass ({
           </div>
         </div>
 
-        <div class="btn-group" role="group" aria-label="Basic example">
+        <div className="btn-group" role="group" aria-label="Basic example">
           <button onClick={this.onSubmit} className="btn btn-primary">Submit</button>
           <EditShareApp data={this.props.data} />
         </div>
