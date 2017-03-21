@@ -38,8 +38,10 @@ class PagesController < ApplicationController
   def timeline
     if timeline_share_token = session[:timeline_share_token]
       @timeline = Timeline.find_by(share_token: timeline_share_token)
+      try_to_link_timeline_to_user(@timeline)
     else
       @timeline = Timeline.create
+      try_to_link_timeline_to_user(@timeline)
       session[:timeline_share_token] = @timeline.share_token
     end
   end
