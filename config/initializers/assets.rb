@@ -15,5 +15,19 @@ Rails.application.config.assets.precompile +=
   [
     "application_#{type}.js",
     "application_#{type}.css",
-    "jeff.scss"
+    "jeff.scss",
+
+
+    "landing/vendor.css",
+    "landing/bootstrap.min.css",
+    "landing/style.css",
+    "landing/custom.css",
+
+    "landing/vendor/jquery-1.11.3.min.js",
+    "landing/vendor/bootstrap.min.js",
+    "landing/vendor/plugin.js",
+    "landing/variable.js",
+    "landing/map.js",
+    "landing/main.js",
+    "landing/vendor/html5shiv.min.js"
   ]

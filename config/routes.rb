@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   # React Router needs a wildcard
   get "react-router(/*all)", to: "pages#index"
 
+  get '/landing', to: "pages#landing"
+
   resources :timelines, param: :share_token, only: [:show]
   resources :timelines, param: :edit_token, only: [:edit]
 

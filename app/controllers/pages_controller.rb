@@ -36,6 +36,8 @@ class PagesController < ApplicationController
   end
 
   def timeline
+    # TODO
+    # if user is signed in, fetch last timeline
     if timeline_share_token = session[:timeline_share_token]
       @timeline = Timeline.find_by(share_token: timeline_share_token)
       try_to_link_timeline_to_user(@timeline)
@@ -44,6 +46,10 @@ class PagesController < ApplicationController
       try_to_link_timeline_to_user(@timeline)
       session[:timeline_share_token] = @timeline.share_token
     end
+  end
+
+  def landing
+
   end
 
   private
