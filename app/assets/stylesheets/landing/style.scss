@@ -6711,7 +6711,7 @@ form._default textarea {
 
 .is-site-bg-img .site-bg-img {
   display: block;
-  background-image: url(../img/bg/site-bg-img.jpg);
+  background-image: image-url("bg/site-bg-img.jpg");
 }
 
 .is-site-bg-slideshow .site-bg-img {
