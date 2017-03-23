@@ -207,7 +207,7 @@ offset = - $('.navbar-header').height();
       submitHandler: function(form) {
         $(form).ajaxSubmit({
           type: 'POST',
-          url: 'assets/php/contact.php',
+          url: '/contact_requests',
           dataType: 'json',
           cache: false,
           data: $form.serialize(),
@@ -217,7 +217,7 @@ offset = - $('.navbar-header').height();
               $form[0].reset();
               $form.find('.form-label').removeClass('error');
               $form.find('button').blur();
-              $formNotify.removeClass('valid error').addClass('valid').html('<i class="fa fa-check-square"></i>' + data.message).show();
+              $formNotify.removeClass('valid error').addClass('valid').html('<i class="fa fa-check-square"></i>' + "We received you message. Thanks!").show();
             } else {
               $formNotify.removeClass('valid error').addClass('error').html(data.message).show();
             }

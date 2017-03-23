@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # Serve websocket cable requests in-process
   # mount ActionCable.server => '/cable'
 
-  root "pages#timeline"
+  root "pages#landing"
 
   get "simple", to: "pages#simple"
   get "no-router", to: "pages#no_router"
@@ -15,12 +15,14 @@ Rails.application.routes.draw do
   get "react-router(/*all)", to: "pages#index"
 
   get '/landing', to: "pages#landing"
+  get '/timeline', to: "pages#timeline"
 
   resources :timelines, param: :share_token, only: [:show]
   resources :timelines, param: :edit_token, only: [:edit]
 
   resources :comments
   resources :events
+  resources :contact_requests
   
 
   mount ActionCable.server => "/cable"

@@ -49,6 +49,7 @@ class PagesController < ApplicationController
   end
 
   def landing
+    @contact_request = ContactRequest.new
     render :layout => false
   end
 
