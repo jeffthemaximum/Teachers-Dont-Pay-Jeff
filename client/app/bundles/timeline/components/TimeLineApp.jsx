@@ -73,7 +73,6 @@ const TimeLineApp = React.createClass({
         // "overflowY":"auto",
         // "backgroundColor":"#f5f5f5",
         "borderRight":"1px solid #9933CC",
-        "height": "100vh"
       }
 
     return (
