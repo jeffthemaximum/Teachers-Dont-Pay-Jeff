@@ -11,4 +11,8 @@ class ApplicationController < ActionController::Base
     return if current_user.user_timeline_relationships.where(timeline_id: timeline.id).exists?
     current_user.user_timeline_relationships.create!(timeline: timeline)
   end
+
+  def no_container
+    @no_container = true
+  end
 end

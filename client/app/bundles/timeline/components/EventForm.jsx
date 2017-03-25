@@ -151,7 +151,7 @@ const EventForm = React.createClass ({
         </div>
         <div className="form-group required">
           <div className="row">
-            <div className={"col-sm-4 col-md-2" + (this.state.errors.year ? " has-error" : "")}>
+            <div className={"col-sm-6 col-md-6" + (this.state.errors.year ? " has-error" : "")}>
               <label className='control-label' htmlFor="event-year">
                 Year
               </label>
@@ -165,7 +165,7 @@ const EventForm = React.createClass ({
                 required="required"
               />
             </div>
-            <div className="col-sm-4 col-md-2">
+            <div className="col-sm-6 col-md-6">
               <label htmlFor="event-month">
                 Month
               </label>
@@ -185,7 +185,7 @@ const EventForm = React.createClass ({
                 <option value='12'>December</option>
               </select> 
             </div>
-            <div className="col-sm-4 col-md-2">
+            <div className="col-sm-6 col-md-6">
               <label htmlFor="event-day">
                 Day
               </label>
@@ -198,7 +198,7 @@ const EventForm = React.createClass ({
                 id="event-day"
               />
             </div>
-            <div className="col-sm-4 col-md-2">
+            <div className="col-sm-6 col-md-6">
               <label htmlFor="event-hour">
                 Time - hour
               </label>
@@ -211,7 +211,7 @@ const EventForm = React.createClass ({
                 id="event-hour"
               />
             </div>
-            <div className="col-sm-4 col-md-2">
+            <div className="col-sm-6 col-md-6">
               <label htmlFor="event-minute">
                 Time - minute
               </label>
@@ -224,7 +224,7 @@ const EventForm = React.createClass ({
                 id="event-minute"
               />
             </div>
-            <div className="col-sm-4 col-md-2">
+            <div className="col-sm-6 col-md-6">
               <label htmlFor="event-ampm">
                 AM / PM
               </label>

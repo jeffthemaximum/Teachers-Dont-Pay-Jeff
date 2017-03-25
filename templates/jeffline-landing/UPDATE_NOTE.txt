@@ -1,0 +1,39 @@
+documentation for update from v1.03 to v1.04
+-------------------------------------------------
+What's news in v1.04?
+
+updated - google map now require api key, more info - https://developers.google.com/maps/pricing-and-plans/standard-plan-2016-update.
+
+How to update?
+
+1. First, BACKUP BACKUP BACKUP your edited template.
+
+2. replace `assets/js/map.js` with new version.
+
+3. open `assets/js/variable.js` find
+
+// [true, false] - enable or disable google map
+var _map_toggle =                                 true;
+
+
+
+Edit to be
+
+
+
+// [true, false] - enable or disable google map
+var _map_toggle =                                 true;
+
+// change 'ABCDE12345' to be your google map api key, more info - https://developers.google.com/maps/documentation/javascript/
+var _map_api =                                    'ABCDE12345';
+
+
+
+
+And change 'ABCDE12345' to be your google map api key.
+
+
+
+Done.
+
+-------------------------------------------------

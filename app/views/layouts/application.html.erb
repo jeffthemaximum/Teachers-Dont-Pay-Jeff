@@ -33,7 +33,7 @@
   prerender: false) 
 %>
 
-<div class="container">
+<div class="<%= @no_container ? '' : 'container' %>">
   <% if notice %>
     <div class="alert alert-info" role="alert"><%= notice%>
       <a href="#" class="close" data-dismiss="alert">&#215;</a>

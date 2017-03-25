@@ -54,8 +54,28 @@ const TimeLineApp = React.createClass({
     // hacky solution to stop buttons from showing on timeline events
     document.getElementById('dummy').click();
   },
-
+  
   render(){
+    let customStyles = {
+      margin: "0 15px"
+    }
+
+    let sidebarStyles = 
+      {
+        // "position":"fixed",
+        // "top":"51px",
+        // "bottom":"0",
+        // "left":"0",
+        // "zIndex":"1000",
+        // "display":"block",
+        // "padding":"20px",
+        // "overflowX":"hidden",
+        // "overflowY":"auto",
+        // "backgroundColor":"#f5f5f5",
+        "borderRight":"1px solid #9933CC",
+        "height": "100vh"
+      }
+
     return (
       <div>
         { this.props.sharing === true ?
@@ -67,17 +87,21 @@ const TimeLineApp = React.createClass({
           />
 
           :
-          <div>
-            <EventForm
-              data={this.state}
-              updateEvents={this.updateEvents}
-              sortEvents={this.sortEvents}
-            />
-            <TimeLine
-              data={this.state}
-              updateEvents={this.updateEvents}
-              deleteEvent={this.deleteEvent}
-            />
+          <div style={customStyles}>
+            <div className="col-sm-12 col-md-4  col-lg-3 sidebar" style={sidebarStyles}>
+              <EventForm
+                data={this.state}
+                updateEvents={this.updateEvents}
+                sortEvents={this.sortEvents}
+              />
+            </div>
+            <div className="col-sm-12 col-md-8 col-lg-9 main">
+              <TimeLine
+                data={this.state}
+                updateEvents={this.updateEvents}
+                deleteEvent={this.deleteEvent}
+              />
+            </div>
           </div>
         }
       </div>

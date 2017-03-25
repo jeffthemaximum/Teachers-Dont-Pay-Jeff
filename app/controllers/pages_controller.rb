@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   include ReactOnRails::Controller
   before_action :set_comments
+  before_action :no_container, only: [:timeline]
 
   def index
     # NOTE: The below notes apply if you want to set the value of the props in the controller, as
