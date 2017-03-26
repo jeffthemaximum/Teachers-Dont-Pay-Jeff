@@ -6,6 +6,7 @@ import BaseComponent from 'libs/components/BaseComponent';
 import ShareApp from './ShareApp';
 import EditApp from './EditApp';
 import EditShareApp from './EditShareApp';
+import FileInput from './FileInput';
 
 const EventForm = React.createClass ({
 
@@ -235,6 +236,10 @@ const EventForm = React.createClass ({
               </select> 
             </div>
           </div>
+        </div>
+
+        <div className="col-sm-12">
+          <FileInput />
         </div>
 
         <div className="btn-group" role="group" aria-label="Basic example">

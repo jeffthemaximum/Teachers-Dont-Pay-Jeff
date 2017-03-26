@@ -23,6 +23,13 @@ Rails.application.routes.draw do
   resources :comments
   resources :events
   resources :contact_requests
+
+  namespace :api do
+    namespace :v1, defaults: { format: 'json' } do
+      resources :documents, only: [:index, :create]
+      resources :uploads, only: [:create]
+    end
+  end
   
 
   mount ActionCable.server => "/cable"

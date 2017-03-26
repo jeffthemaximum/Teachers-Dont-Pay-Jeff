@@ -62,4 +62,16 @@ Rails.application.configure do
 
   # DEVISE
   config.action_mailer.default_url_options = { host: 'localhost', port: 5000 }
+
+  # paperclip
+  config.paperclip_defaults = {
+    storage: :s3,
+    s3_credentials: {
+      bucket: Rails.application.secrets.aws['s3_bucket_name'],
+      access_key_id: Rails.application.secrets.aws['access_key_id'],
+      secret_access_key: Rails.application.secrets.aws['secret_access_key'],
+      s3_region: 'us-east-2',
+    }
+  }
+
 end

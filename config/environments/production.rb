@@ -87,4 +87,15 @@ Rails.application.configure do
 
   config.action_cable.url = "wss://#{ENV['PRODUCTION_HOST']}/cable"
   config.action_cable.allowed_request_origins = ["https://#{ENV['PRODUCTION_HOST']}"]
+
+  # paperclip
+  config.paperclip_defaults = {
+    storage: :s3,
+    s3_credentials: {
+      bucket: Rails.application.secrets.aws['s3_bucket_name'],
+      access_key_id: Rails.application.secrets.aws['access_key_id'],
+      secret_access_key: Rails.application.secrets.aws['secret_access_key'],
+      s3_region: 'us-east-2',
+    }
+  }
 end
