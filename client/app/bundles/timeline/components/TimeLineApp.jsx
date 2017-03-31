@@ -13,7 +13,8 @@ const TimeLineApp = React.createClass({
       events: this.props.events,
       share_token: this.props.shareToken,
       shareLink: this.props.shareLink,
-      editLink: this.props.editLink
+      editLink: this.props.editLink,
+      sharing: this.props.sharing,
     })
   },
 

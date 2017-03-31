@@ -26,12 +26,13 @@ const TimeLineEvent = React.createClass({
     // e.target is the element which was clicked upon.
     // check whether the element clicked upon is in your component - if not,
     // then call the close logic
-    
-    if(!ReactDOM.findDOMNode(this).contains(e.target)) {
-      // the click was outside your component, so handle closing here
-      this.setState({showButtons: false})
-    } else{
-      this.setState({showButtons: true})
+    if (!this.props.data.sharing) {
+      if(!ReactDOM.findDOMNode(this).contains(e.target)) {
+        // the click was outside your component, so handle closing here
+        this.setState({showButtons: false})
+      } else{
+        this.setState({showButtons: true})
+      }
     }
   },
 

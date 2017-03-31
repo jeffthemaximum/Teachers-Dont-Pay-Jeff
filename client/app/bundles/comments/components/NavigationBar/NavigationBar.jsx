@@ -28,7 +28,7 @@ const NavigationBar = (props) => {
             <span className="icon-bar" />
             <span className="icon-bar" />
           </button>
-          <a className="navbar-brand" href="/">JeffLine</a>
+          <a className="navbar-brand" href="/timeline">JeffLine</a>
         </div>
         <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           { data.loggedIn ?

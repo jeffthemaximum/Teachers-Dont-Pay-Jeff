@@ -17,6 +17,7 @@ const TimeLine = React.createClass({
                share_token={this.props.data.share_token} 
                event={event} 
                key={i}
+               data={this.props.data}
              />
     }.bind(this));
     return (

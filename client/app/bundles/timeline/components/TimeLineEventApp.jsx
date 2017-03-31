@@ -25,6 +25,7 @@ const TimeLineEventApp = React.createClass({
       <div className="timeline-event-container">
         { this.state.editingEvent ?
             <EditTimeLineEvent 
+              data={this.props.data}
               event={this.props.event} 
               share_token={this.props.share_token}
               formatDate={this.formatDate} 
@@ -33,6 +34,7 @@ const TimeLineEventApp = React.createClass({
             />
           :
             <TimeLineEvent 
+              data={this.props.data}
               event={this.props.event} 
               share_token={this.props.share_token}
               formatDate={this.formatDate} 
