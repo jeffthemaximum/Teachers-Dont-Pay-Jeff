@@ -3,7 +3,7 @@
   props: {
     shareToken: @timeline.share_token,
     events: @timeline.events.order(:date).map{|e| e.to_hash_with_documents},
-    shareLink: timeline_url(@timeline.share_token),
+    shareLink: time_url(@timeline.share_token),
     editLink: edit_timeline_url(@timeline.edit_token),
     sharing: @sharing,
     editing: @editing

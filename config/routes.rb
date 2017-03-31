@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   get '/landing', to: "pages#landing"
   get '/timeline', to: "pages#timeline"
 
-  resources :timelines, param: :share_token, only: [:show]
+  resources :timelines, as: :time, param: :share_token, only: [:show]
   resources :timelines, param: :edit_token, only: [:edit]
 
   resources :comments
