@@ -12,7 +12,7 @@ const EventForm = React.createClass ({
 
   getInitialState(){
     return({
-      document: null,
+      documents: [],
       events: this.props.data.events,
       title: "",
       description: "",
@@ -31,7 +31,7 @@ const EventForm = React.createClass ({
   },
 
   updateEventFormStateWithDocument(document){
-    this.setState({document: document});
+    this.setState({ documents: $.merge([document], this.state.documents) });
   },
 
   onTitleInputChange(e){
@@ -244,7 +244,10 @@ const EventForm = React.createClass ({
         </div>
 
         <div className="col-sm-12">
-          <FileInput updateEventFormStateWithDocument={this.updateEventFormStateWithDocument} />
+          <FileInput 
+            updateEventFormStateWithDocument={this.updateEventFormStateWithDocument} 
+            documents={this.state.documents}
+          />
         </div>
 
         <div className="btn-group" role="group" aria-label="Basic example">

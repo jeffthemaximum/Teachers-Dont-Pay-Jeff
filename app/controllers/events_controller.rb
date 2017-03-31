@@ -112,10 +112,13 @@ class EventsController < ApplicationController
   end
 
   def connect_to_document
-    document_params = params[:event][:document]
-    if !document_params.blank?
-      document = Document.find(document_params[:id])
-      @event.documents << document
+    documents_params = params[:event][:documents]
+    if !documents_params.blank?
+      documents_ids = documents_params.map{|d| d["id"]}
+      documents_ids.each do |d_id|
+        document = Document.find(d_id)
+        @event.documents << document
+      end
     end
     return @event
   end

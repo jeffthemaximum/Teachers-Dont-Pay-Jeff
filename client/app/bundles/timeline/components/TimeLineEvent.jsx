@@ -64,6 +64,18 @@ const TimeLineEvent = React.createClass({
   },
 
   render(){
+    const renderedPics = this.props.event.documents.map(function(doc){
+      return (
+        <img 
+          key={doc.id} 
+          src={doc.direct_upload_url} 
+          className="img-responsive img-rounded" 
+          alt={this.props.upload_file_name} 
+          width="304" 
+          height="236">
+        </img>
+      )
+    }.bind(this));
     return (
       <div className="cd-timeline-block">
         <div className="cd-timeline-img cd-picture">
@@ -73,8 +85,8 @@ const TimeLineEvent = React.createClass({
         <div className="cd-timeline-content">
           <h2>{this.props.event.title}</h2>
           <p>{this.props.event.description}</p>
-          <span className="cd-date">{this.props.formatDate()}</span>
-
+          <p className="cd-date">{this.props.formatDate()}</p>
+          {renderedPics}
           {
             this.state.showButtons &&
 

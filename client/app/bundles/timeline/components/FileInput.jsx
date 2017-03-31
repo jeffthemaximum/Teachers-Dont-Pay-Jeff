@@ -57,7 +57,6 @@ var FileInput = React.createClass({
     return {
       errors: null,
       percentLoaded: null,
-      documents: [],
       downloadUrl: null,
     }
   },
@@ -171,7 +170,6 @@ var FileInput = React.createClass({
     // send array to server
     // iterate over array on server and connect each
     this.props.updateEventFormStateWithDocument(document);
-    this.setState({ documents: $.merge([document], this.state.documents) });
   },
 
   handleResourceCreated: function(file, document) {
@@ -189,7 +187,7 @@ var FileInput = React.createClass({
   render: function() {
     return (
       <div>
-        <DocumentsList documents={this.state.documents} />
+        <DocumentsList documents={this.props.documents} />
         <input ref="fileElement" type="file" accept="image/*" multiple={true} onChange={this.handleUploadFiles} />
         <span>{this.state.percentLoaded}</span>
         <span>{this.state.errors}</span>
