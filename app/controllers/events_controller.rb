@@ -8,7 +8,7 @@ class EventsController < ApplicationController
     @event = connect_to_timeline
     @event = connect_to_document
     if @event.save
-      render :json => @event
+      render :json => @event.to_hash_with_documents
     else
       render json: @event.errors, status: :unprocessable_entity
     end

@@ -30,4 +30,11 @@ class Event < ApplicationRecord
     self.save!
     return self
   end
+
+  def to_hash_with_documents
+    event_hash = self.attributes
+    documents_array_of_hashes = self.documents.map{|d| d.attributes}
+    event_hash['documents'] = documents_array_of_hashes
+    return event_hash
+  end
 end
