@@ -20,7 +20,7 @@ class EventsController < ApplicationController
     @event = edit_event_datetime
 
     if @event.save
-      render json: @event
+      render json: @event.to_hash_with_documents
     else
       render json: @event.errors, status: :unprocessable_entity
     end
