@@ -166,6 +166,11 @@ var FileInput = React.createClass({
 
   handleCreateDocument: function(document) {
     document.downloadUrl = this.state.downloadUrl;
+    // TODO handle uploading multiple documents to an event
+    // make an array of documents on eventForm
+    // send array to server
+    // iterate over array on server and connect each
+    this.props.updateEventFormStateWithDocument(document);
     this.setState({ documents: $.merge([document], this.state.documents) });
   },
 

@@ -6,8 +6,9 @@ class EventsController < ApplicationController
     @event = create_event
     @event = create_event_datetime
     @event = connect_to_timeline
+    @event = connect_to_document
     if @event.save
-      render json: @event
+      render :json => @event
     else
       render json: @event.errors, status: :unprocessable_entity
     end
@@ -108,6 +109,15 @@ class EventsController < ApplicationController
     @event.date = event_date
     return @event
 
+  end
+
+  def connect_to_document
+    document_params = params[:event][:document]
+    if !document_params.blank?
+      document = Document.find(document_params[:id])
+      @event.documents << document
+    end
+    return @event
   end
 
   def adding(time)

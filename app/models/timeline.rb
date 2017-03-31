@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: timelines
+#
+#  id          :integer          not null, primary key
+#  title       :string
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  share_token :string
+#  edit_token  :string
+#
+
 class Timeline < ApplicationRecord
   has_many :user_timeline_relationships
   has_many :events
