@@ -89,6 +89,7 @@ const EventForm = React.createClass ({
 
   clearForm(){
     this.setState({
+      documents: [],
       title: "",
       description: "",
       year: "",
