@@ -12,7 +12,7 @@ const TimeLineEventApp = React.createClass({
   },
 
   formatDate(){
-    return moment(this.props.event.date).format('MMMM Do YYYY, h:mm:ss a');
+    return moment.utc(this.props.event.date).format('MMMM Do YYYY, h:mm:ss a');
   },
 
   toggleEditState(){

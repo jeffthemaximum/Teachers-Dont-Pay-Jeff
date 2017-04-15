@@ -100,10 +100,38 @@ class EventsController < ApplicationController
 
     minute = params[:event][:minute]
     if adding(:minute) || editing(:minute)
-      event_date = event_date.change({minute: minute.to_i})
+      event_date = event_date.change({min: minute.to_i})
       @event.minute = minute.to_i
     elsif removing(:minute)
       @event.minute = nil
+    end
+
+    ampm = params[:event][:ampm]
+    if !ampm.blank?
+      ampm_to_words = params[:event][:ampm] == "1" ? "am" : "pm"
+      ampm_diff = nil
+      if @event.ampm == "pm" && ampm_to_words == "am"
+        if !hour.blank? && hour.to_i > 11
+          ampm_diff = -12
+        else
+          ampm_diff = 0
+        end
+      elsif @event.ampm == "am" && ampm_to_words == "pm"
+        if !hour.blank? && hour.to_i < 12
+          ampm_diff = 12
+        else
+          ampm_diff = 0
+        end
+      end
+      if ampm_diff
+        hour = event_date.hour + ampm_diff
+        event_date = event_date.change({hour: hour.to_i})
+        @event.hour = hour.to_i
+        if !minute.blank?
+          event_date = event_date.change({min: minute.to_i})
+          @event.minute = minute.to_i
+        end
+      end
     end
 
     @event.date = event_date
@@ -160,8 +188,23 @@ class EventsController < ApplicationController
 
     minute = params[:event][:minute]
     if !minute.blank?
-      event_date = event_date.change({minute: minute.to_i})
+      event_date = event_date.change({min: minute.to_i})
       @event.minute = minute.to_i
+    end
+
+    ampm = params[:event][:ampm]
+    if !ampm.blank?
+      if ampm == "2"
+        # add 12 to hour
+        hour = event_date.hour + 12
+        event_date = event_date.change({hour: hour.to_i})
+        @event.hour = hour.to_i
+        # seems weird, but you need to re-set minutes
+        if !minute.blank?
+          event_date = event_date.change({min: minute.to_i})
+          @event.minute = minute.to_i
+        end
+      end
     end
     
     @event.date = event_date

@@ -37,4 +37,12 @@ class Event < ApplicationRecord
     event_hash['documents'] = documents_array_of_hashes
     return event_hash
   end
+
+  def ampm
+    if self.hour < 12
+      return "am"
+    else
+      return "pm"
+    end
+  end
 end
