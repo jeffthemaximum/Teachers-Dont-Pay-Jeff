@@ -12,8 +12,39 @@ const TimeLineEventApp = React.createClass({
   },
 
   formatDate(){
-    return moment.utc(this.props.event.date).format('MMMM Do YYYY, h:mm:ss a');
+    let event = this.props.event;
+    let momentFormat;
+    const {date, month, day, hour, minute} = event;
+    // if only year
+    if (!month && !day && !hour && !minute){
+      momentFormat = 'YYYY';
+    }
+    // if it has month
+    else if (month && !day && !hour && !minute) {
+      momentFormat = 'MMMM YYYY';
+    }
+    else if (month && day && !hour && !minute) {
+      momentFormat = 'MMMM Do YYYY';
+    }
+    else if (month && day && hour && !minute) {
+      momentFormat = 'MMMM Do YYYY, h a';
+    }
+    else if (month && day && hour && minute) {
+      momentFormat = 'MMMM Do YYYY, h:mm a';
+    }
+    // if it only has time
+    else if (!month && !day && hour && !minute) {
+      momentFormat = 'h a YYYY';
+    }
+    else if (!month && !day && hour && minute) {
+      momentFormat = 'h:mm a YYYY';
+    } else {
+      momentFormat = 'MMMM Do YYYY, h:mm a';
+    }
+    return moment.utc(date).format(momentFormat);
   },
+
+
 
   toggleEditState(){
     let currState = this.state.editingEvent;

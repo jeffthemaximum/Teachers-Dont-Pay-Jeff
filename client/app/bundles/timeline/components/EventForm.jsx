@@ -26,8 +26,33 @@ const EventForm = React.createClass ({
       errors : {
         title: false,
         year: false,
+        uploading: false
       }
     })
+  },
+
+  componentDidUpdate(){
+    this.clearUploadingErrors();
+  },
+
+  shouldClearUploadingWarning(){
+    return (this.state.errors.uploading && this.state.uploading === false)
+  },
+
+  clearUploadingErrors(){
+    if (this.shouldClearUploadingWarning()) {
+      this.setState({
+        errors: {
+          title: this.state.errors.title,
+          year: this.state.errors.year,
+          uploading: null
+        }
+      })
+    }
+  },
+
+  updateParentStateFromChild(newState){
+    this.setState(newState);
   },
 
   updateEventFormStateWithDocument(document){
@@ -76,12 +101,29 @@ const EventForm = React.createClass ({
         errors: errors
       })
     }
-    if (this.state.year === "") {
+    else if (this.state.year === "") {
       let errors = this.state.errors
       errors.year = true
       isErrors = true;
       this.setState({
         errors: errors
+      })
+    }
+    else if (this.state.uploading) {
+      let errors = this.state.errors
+      errors.uploading = true;
+      isErrors = true;
+      this.setState({
+        errors: errors
+      })
+    }
+    else {
+      this.setState({
+        errors : {
+          title: false,
+          year: false,
+          uploading: false
+        }
       })
     }
     return isErrors;
@@ -101,6 +143,7 @@ const EventForm = React.createClass ({
       errors : {
         title: false,
         year: false,
+        upload: false
       }
     });
   },
@@ -132,7 +175,7 @@ const EventForm = React.createClass ({
 
   render() {
     return (
-      <form>
+      <form className="event-form">
        <div className={"form-group required" + (this.state.errors.title ? " has-error" : "")}>
           <label className='control-label' htmlFor="eventTitle">Event Title</label>
           <input 
@@ -243,11 +286,14 @@ const EventForm = React.createClass ({
             </div>
           </div>
         </div>
-
+        <div className={"col-sm-12 warning" + (this.state.errors.uploading ? " show": " hidden")}>
+          <p>Please wait until your upload is finished :)</p>
+        </div>
         <div className="col-sm-12">
           <FileInput 
             updateEventFormStateWithDocument={this.updateEventFormStateWithDocument} 
             documents={this.state.documents}
+            updateParentStateFromChild={this.updateParentStateFromChild}
           />
         </div>
 

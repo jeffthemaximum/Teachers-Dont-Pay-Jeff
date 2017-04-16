@@ -58,6 +58,7 @@ var FileInput = React.createClass({
       errors: null,
       percentLoaded: null,
       downloadUrl: null,
+      uploading: false,
     }
   },
 
@@ -132,6 +133,8 @@ var FileInput = React.createClass({
 
   handleUploadFiles: function(e) {
 
+    this.props.updateParentStateFromChild({uploading: true});
+
     this.uploads = _.map(e.target.files, function(file) {
       return { name: file.name, size: file.size, loaded: 0 }
     });
@@ -141,9 +144,11 @@ var FileInput = React.createClass({
     _.each(e.target.files, function(file) {
       this.createResource(file, { onProgress: this.handleProgress })
       .then(function(data) {
+        this.props.updateParentStateFromChild({uploading: false});
         this.handleResourceCreated(file, data.document);
       }.bind(this))
       .fail(function(xhr) {
+        this.props.updateParentStateFromChild({uploading: false});
         this.handleError(file, xhr);
       }.bind(this));
     }.bind(this));
