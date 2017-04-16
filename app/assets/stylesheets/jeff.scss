@@ -16,6 +16,12 @@ form {
     border-color: $brand-default-dark;
     margin-top: 20px;
   }
+
+  .warning {
+    p {
+      color: $brand-default-dark;
+    }
+  }
 }
 
 .cd-timeline-content:focus {

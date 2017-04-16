@@ -275,15 +275,15 @@ header:not(.site-header) h1 {
 @media only screen and (min-width: 600px) {
   .cd-timeline-content h2 {
     font-size: 20px;
-    font-size: 1.25rem;
+    font-size: 2rem;
   }
   .cd-timeline-content p {
     font-size: 16px;
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
   .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
     font-size: 14px;
-    font-size: 0.875rem;
+    font-size: 1.25rem;
   }
 }
 @media only screen and (min-width: 960px) {
@@ -304,10 +304,10 @@ header:not(.site-header) h1 {
   .cd-timeline-content .cd-date {
     position: absolute;
     width: 100%;
-    left: 122%;
+    left: 130%;
     top: 6px;
     font-size: 16px;
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
   .timeline-event-container:nth-child(even) .cd-timeline-content {
     float: right;
