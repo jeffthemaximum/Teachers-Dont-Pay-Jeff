@@ -22,6 +22,8 @@ class Timeline < ApplicationRecord
   before_create :generate_share_token
   before_create :generate_edit_token
 
+  validates :title, length: { maximum: 140, minimum: 1 }
+
   def generate_share_token
     begin
       self.share_token = SecureRandom.base64(4).gsub("/","").gsub(/[=+$]/,"")

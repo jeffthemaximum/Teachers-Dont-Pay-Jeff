@@ -5,6 +5,7 @@ $brand-default: #aa66cc;
 $brand-default-dark: #9933CC;
 
 $brand-red: #ff4444;
+$brand-error: #A94442;
 
 body {
   padding-top: 0px;
@@ -19,8 +20,13 @@ form {
 
   .warning {
     p {
-      color: $brand-default-dark;
+      color: $brand-error;
     }
+  }
+
+  input.edit-timeline-title {
+    font-size: 25px;
+    height: 60px;
   }
 }
 

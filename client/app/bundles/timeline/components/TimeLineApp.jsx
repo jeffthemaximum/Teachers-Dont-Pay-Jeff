@@ -15,6 +15,12 @@ const TimeLineApp = React.createClass({
       shareLink: this.props.shareLink,
       editLink: this.props.editLink,
       sharing: this.props.sharing,
+      timeline: this.props.timeline,
+      editingTitle: false,
+      timelineTitle: this.props.timeline.title,
+      error: {
+        title: null
+      }
     })
   },
 
@@ -55,13 +61,90 @@ const TimeLineApp = React.createClass({
     // hacky solution to stop buttons from showing on timeline events
     document.getElementById('dummy').click();
   },
-  
+
+  handleCancelTitleEdit(){
+    const timelineTitle = this.state.timeline.title;
+    this.setState({
+      timelineTitle: timelineTitle
+    });
+    this.clearErrors();
+    this.toggleTitleEditState();
+  },
+
+  toggleTitleEditState(){
+    let currEditState = this.state.editingTitle;
+    this.setState({editingTitle: !currEditState});
+  },
+
+  handleTitleInputChange(e){
+    this.setState({timelineTitle: e.target.value});
+  },
+
+  handleTitleEditSubmit(e){
+    if (!this.validateTitle()){
+      return;
+    }
+
+    const requestConfig = {
+      responseType: 'json',
+      headers: ReactOnRails.authenticityHeaders(),
+    };
+    const data = {
+      timeline_title: this.state.timelineTitle
+    }
+    let url = "/timelines/" + this.state.timeline.id;
+    axios.patch(url, data, requestConfig)
+    .then(function(response){
+      let timeline = response.data;
+      this.setState({
+        timeline: timeline,
+        timelineTitle: timeline.title
+      });
+      this.toggleTitleEditState();
+    }.bind(this))
+    .catch(function(error){
+      console.log(error);
+    })
+  },
+
+  clearErrors(){
+    this.setState({
+      error: {
+        title: null
+      }
+    })
+  },
+
+  validateTitle(){
+    let timelineTitle = this.state.timelineTitle;
+    let error;
+    // cant be blank
+    if (timelineTitle.length === 0 || timelineTitle === null) {
+      error = "Title can't be blank";
+    // cant be more than 140 chars
+    } else if (timelineTitle.length >= 140) {
+      error = "Title can't be more than 140 characters";
+    }
+
+    if (error) {
+      this.setState({
+        error: {
+          title: error
+        }
+      });
+      return false;
+    } else {
+      this.clearErrors();
+      return true;
+    }
+  },
+
   render(){
     let customStyles = {
       margin: "0 15px"
     }
 
-    let sidebarStyles = 
+    let sidebarStyles =
       {
         // "position":"fixed",
         // "top":"51px",
@@ -100,6 +183,10 @@ const TimeLineApp = React.createClass({
                 data={this.state}
                 updateEvents={this.updateEvents}
                 deleteEvent={this.deleteEvent}
+                toggleTitleEditState={this.toggleTitleEditState}
+                onTitleInputChange={this.handleTitleInputChange}
+                onTitleEditSubmit={this.handleTitleEditSubmit}
+                onCancelTitleEditClick={this.handleCancelTitleEdit}
               />
             </div>
           </div>

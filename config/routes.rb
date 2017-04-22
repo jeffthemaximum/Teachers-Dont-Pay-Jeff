@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 
   resources :timelines, as: :time, param: :share_token, only: [:show]
   resources :timelines, param: :edit_token, only: [:edit]
+  resources :timelines, param: :id, only: [:update]
 
   resources :comments
   resources :events
