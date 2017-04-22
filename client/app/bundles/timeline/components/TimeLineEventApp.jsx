@@ -24,13 +24,13 @@ const TimeLineEventApp = React.createClass({
       momentFormat = 'MMMM YYYY';
     }
     else if (month && day && !hour && !minute) {
-      momentFormat = 'MMMM Do YYYY';
+      momentFormat = 'MMMM Do, YYYY';
     }
     else if (month && day && hour && !minute) {
-      momentFormat = 'MMMM Do YYYY, h a';
+      momentFormat = 'MMMM Do, YYYY, h a';
     }
     else if (month && day && hour && minute) {
-      momentFormat = 'MMMM Do YYYY, h:mm a';
+      momentFormat = 'MMMM Do, YYYY, h:mm a';
     }
     // if it only has time
     else if (!month && !day && hour && !minute) {
@@ -39,7 +39,7 @@ const TimeLineEventApp = React.createClass({
     else if (!month && !day && hour && minute) {
       momentFormat = 'h:mm a YYYY';
     } else {
-      momentFormat = 'MMMM Do YYYY, h:mm a';
+      momentFormat = 'MMMM Do, YYYY, h:mm a';
     }
     return moment.utc(date).format(momentFormat);
   },

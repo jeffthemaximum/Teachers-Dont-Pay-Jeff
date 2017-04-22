@@ -78,7 +78,7 @@ const TimeLineEvent = React.createClass({
       )
     }.bind(this));
     return (
-      <div className="cd-timeline-block">
+      <div style={this.props.data.sharing ? {cursor:'default'} : {cursor:'pointer'}} className="cd-timeline-block">
         <div className="cd-timeline-img cd-picture">
           <img src="/event-location.svg" alt="Picture"></img>
         </div>

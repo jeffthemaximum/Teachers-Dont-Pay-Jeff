@@ -5,7 +5,7 @@ import TimeLineEventApp from './TimeLineEventApp';
 const EditTimelineTitle = React.createClass({
   render(){
     return(
-      <div>
+      <div className="timeline-title-text container">
         {(this.props.data.editingTitle) ?
           <form>
             <div className={"form-group" + (this.props.data.error.title ? " has-error" : "")}>
@@ -36,7 +36,7 @@ const EditTimelineTitle = React.createClass({
             </div>
           </form>
         :
-            <h1 onClick={this.props.toggleTitleEditState} style={{cursor:'pointer'}}>{this.props.data.timeline.title}</h1>
+            <h1 onClick={this.props.toggleTitleEditState} style={this.props.data.sharing ? {cursor:'default'} : {cursor:'pointer'}}>{this.props.data.timeline.title}</h1>
         }
       </div>
     )
