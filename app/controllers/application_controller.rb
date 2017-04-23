@@ -15,4 +15,9 @@ class ApplicationController < ActionController::Base
   def no_container
     @no_container = true
   end
+
+  def after_sign_in_path_for(resource)
+    # request.env['omniauth.origin'] || stored_location_for(resource) || timeline_path
+    timeline_path
+  end
 end

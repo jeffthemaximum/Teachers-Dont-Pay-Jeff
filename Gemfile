@@ -58,7 +58,7 @@ gem 'aws-sdk', '~> 2'
 gem 'paperclip', :git=> 'https://github.com/thoughtbot/paperclip', :ref => '523bd46c768226893f23889079a7aa9c73b57d68'
 gem 'delayed_job_active_record'
 gem 'annotate'
-
+gem "omniauth-google-oauth2"
 
 group :development do
   # Access an IRB console on exceptions page and /console in development

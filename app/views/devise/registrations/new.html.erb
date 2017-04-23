@@ -25,6 +25,10 @@
           <div class="actions">
             <%= f.submit "Sign up", class: "btn btn-primary btn-lg btn-block" %>
           </div>
+          <h2 class="text-center">or</h2>
+          <%= link_to user_google_oauth2_omniauth_authorize_path do %>
+            <%= image_tag("google2x.png", :class => "img-responsive") %>
+          <% end %>
           <%= devise_error_messages! %>
         <% end %>
       </div>
