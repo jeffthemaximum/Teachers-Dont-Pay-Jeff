@@ -26,10 +26,10 @@ const EditTimelineTitle = React.createClass({
                 <p>{this.props.data.error.title}</p>
               </div>
               <div className="buttons">
-                <button onClick={this.props.onCancelTitleEditClick} type="button" className="btn btn-default btn-xs">
+                <button disabled={this.props.data.saving} onClick={this.props.onCancelTitleEditClick} type="button" className="btn btn-default btn-xs">
                   <span className="glyphicon glyphicon-remove" aria-hidden="true"></span> Cancel
                 </button>
-                <button onClick={this.props.onTitleEditSubmit} type="button" className="btn btn-default btn-xs">
+                <button disabled={this.props.data.saving} onClick={this.props.onTitleEditSubmit} type="button" className="btn btn-default btn-xs">
                   <span className="glyphicon glyphicon-floppy-save" aria-hidden="true"></span> Save
                 </button>
               </div>

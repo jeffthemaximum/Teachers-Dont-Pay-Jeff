@@ -198,9 +198,10 @@ const EventForm = React.createClass ({
           <textarea 
             placeholder="On this day, Jeff Maxim, the creator of JeffLine, was born. He was born in West Chester, PA. His Mom is named Libby, and his Dad is George."
             id="eventDescription"
-            className="form-control"
+            className="form-control event-desc"
             onChange={this.onDescriptionInputChange}
             value={this.state.description}
+            rows='5'
           >
           </textarea>
         </div>

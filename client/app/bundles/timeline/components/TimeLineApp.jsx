@@ -18,6 +18,7 @@ const TimeLineApp = React.createClass({
       timeline: this.props.timeline,
       editingTitle: false,
       timelineTitle: this.props.timeline.title,
+      saving: false,
       error: {
         title: null
       }
@@ -85,6 +86,8 @@ const TimeLineApp = React.createClass({
       return;
     }
 
+    this.setState({saving: true});
+
     const requestConfig = {
       responseType: 'json',
       headers: ReactOnRails.authenticityHeaders(),
@@ -96,6 +99,7 @@ const TimeLineApp = React.createClass({
     axios.patch(url, data, requestConfig)
     .then(function(response){
       let timeline = response.data;
+      this.setState({saving: false});
       this.setState({
         timeline: timeline,
         timelineTitle: timeline.title
@@ -103,6 +107,7 @@ const TimeLineApp = React.createClass({
       this.toggleTitleEditState();
     }.bind(this))
     .catch(function(error){
+      this.setState({saving: false});
       console.log(error);
     })
   },

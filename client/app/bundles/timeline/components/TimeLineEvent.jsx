@@ -6,7 +6,8 @@ import ReactOnRails from 'react-on-rails';
 const TimeLineEvent = React.createClass({
   getInitialState() {
     return({
-      showButtons: false
+      showButtons: false,
+      saving: false
     })
   },
 
@@ -37,6 +38,7 @@ const TimeLineEvent = React.createClass({
   },
 
   onDeleteClick(){
+    this.setState({saving: true});
     const requestConfig = {
       responseType: 'json',
       headers: ReactOnRails.authenticityHeaders(),
@@ -57,9 +59,11 @@ const TimeLineEvent = React.createClass({
         headers: ReactOnRails.authenticityHeaders()
     });
     promise.then(function(response){
+      this.setState({saving: false});
       this.props.deleteEvent(response);
     }.bind(this))
     promise.catch(function(error){
+      this.setState({saving: false});
       console.log(error);
     })
   },
@@ -72,8 +76,7 @@ const TimeLineEvent = React.createClass({
           src={doc.direct_upload_url} 
           className="img-responsive img-rounded" 
           alt={this.props.upload_file_name} 
-          width="304" 
-          height="236">
+        >
         </img>
       )
     }.bind(this));
@@ -92,10 +95,10 @@ const TimeLineEvent = React.createClass({
             this.state.showButtons &&
 
               <div className="buttons">
-                <button onClick={this.props.toggleEditState} type="button" className="btn btn-default btn-xs">
+                <button disabled={this.state.saving} onClick={this.props.toggleEditState} type="button" className="btn btn-default btn-xs">
                   <span className="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit
                 </button>
-                <button onClick={this.onDeleteClick} type="button" className="btn btn-default btn-xs">
+                <button disabled={this.state.saving} onClick={this.onDeleteClick} type="button" className="btn btn-default btn-xs">
                   <span className="glyphicon glyphicon-trash" aria-hidden="true"></span> Delete
                 </button>
               </div>

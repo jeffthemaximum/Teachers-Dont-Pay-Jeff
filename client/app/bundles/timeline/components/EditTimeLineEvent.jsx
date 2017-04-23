@@ -15,6 +15,7 @@ const EventTimeLineEvent = React.createClass({
       hour: event.hour ? event.hour : "",
       minute: event.minute ? event.minute : "",
       ampm: event.ampm ? event.ampm : "",
+      saving: false,
       errors : {
         title: false,
         year: false,
@@ -80,6 +81,7 @@ const EventTimeLineEvent = React.createClass({
     if (isErrors === true) {
       return;
     } else {
+      this.setState({saving: true});
       const requestConfig = {
         responseType: 'json',
         headers: ReactOnRails.authenticityHeaders(),
@@ -90,11 +92,13 @@ const EventTimeLineEvent = React.createClass({
       let url = "/events/" + this.state.id;
       axios.patch(url, data, requestConfig)
       .then(function(response){
+        this.setState({saving: false});
         let event = response.data;
         this.props.updateEvents(event);
         this.props.toggleEditState();
       }.bind(this))
       .catch(function(error){
+        this.setState({saving: false});
         console.log(error);
       })
     }
@@ -221,10 +225,10 @@ const EventTimeLineEvent = React.createClass({
           </div>
 
           <div className="buttons">
-            <button onClick={this.props.toggleEditState} type="button" className="btn btn-default btn-xs">
+            <button disabled={this.state.saving} onClick={this.props.toggleEditState} type="button" className="btn btn-default btn-xs">
               <span className="glyphicon glyphicon-remove" aria-hidden="true"></span> Cancel
             </button>
-            <button onClick={this.onEditSubmit} type="button" className="btn btn-default btn-xs">
+            <button disabled={this.state.saving} onClick={this.onEditSubmit} type="button" className="btn btn-default btn-xs">
               <span className="glyphicon glyphicon-floppy-save" aria-hidden="true"></span> Save
             </button>
           </div>
