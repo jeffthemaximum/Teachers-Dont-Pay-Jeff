@@ -193,7 +193,7 @@ var FileInput = React.createClass({
     return (
       <div>
         <DocumentsList documents={this.props.documents} />
-        <input ref="fileElement" type="file" accept="image/*" multiple={true} onChange={this.handleUploadFiles} />
+        <input disabled={this.props.data.saving} ref="fileElement" type="file" accept="image/*" multiple={true} onChange={this.handleUploadFiles} />
         <span>{this.state.percentLoaded}</span>
         <span>{this.state.errors}</span>
       </div>

@@ -23,6 +23,7 @@ const EventForm = React.createClass ({
       minute: "",
       ampm: "",
       share_token: this.props.data.share_token,
+      saving: false,
       errors : {
         title: false,
         year: false,
@@ -149,6 +150,7 @@ const EventForm = React.createClass ({
   },
 
   onSubmit(e){
+    this.setState({saving: true});
     e.preventDefault();
     let isErrors = this.validateForm();
     if (isErrors === true) {
@@ -165,11 +167,14 @@ const EventForm = React.createClass ({
       .then(function(response){
         let event = response.data;
         this.props.updateEvents(event);
+        this.setState({saving: false});
         this.clearForm();
       }.bind(this))
       .catch(function(error){
+        // TODO error messaging
         console.log(error);
-      })
+        this.setState({saving: false});
+      }.bind(this))
     }
   },
 
@@ -294,12 +299,13 @@ const EventForm = React.createClass ({
             updateEventFormStateWithDocument={this.updateEventFormStateWithDocument} 
             documents={this.state.documents}
             updateParentStateFromChild={this.updateParentStateFromChild}
+            data={this.state}
           />
         </div>
 
         <div className="btn-group" role="group" aria-label="Basic example">
-          <button onClick={this.onSubmit} className="btn btn-primary">Submit</button>
-          <EditShareApp data={this.props.data} />
+          <button disabled={this.state.saving} onClick={this.onSubmit} className="btn btn-primary">Submit</button>
+          <EditShareApp data={this.state} />
         </div>
 
       </form>

@@ -1,93 +1,43 @@
-<div class="user-profile col-lg-12 col-sm-12">
-    <div class="card hovercard">
-        <div class="card-background">
-            <img class="card-bkimg" alt="" src="http://lorempixel.com/100/100/people/9/">
-            <!-- http://lorempixel.com/850/280/people/9/ -->
-        </div>
-        <div class="useravatar">
-            
-        </div>
-        <div class="card-info"> <span class="card-title"><%= current_user.email %></span>
+<h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-        </div>
-    </div>
-    <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
-        <div class="btn-group" role="group">
-            <button type="button" id="stars" class="btn btn-primary" href="#tab1" data-toggle="tab"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                <div class="hidden-xs">My Timelines</div>
-            </button>
-        </div>
-        <div class="btn-group" role="group">
-            <button type="button" id="favorites" class="btn btn-default" href="#tab2" data-toggle="tab"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-                <div class="hidden-xs">User settings</div>
-            </button>
-        </div>
-    </div>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
 
-    <div class="well">
-      <div class="tab-content">
-        <div class="tab-pane fade in active" id="tab1">
-          <div class="row">
-            <% current_user.timelines.each do |timeline| %>
-              <div class="col-sm-12 col-md-6 col-lg-4">   
-                <h4 class="">My Timeline</h4>
-                <%= link_to "Edit Timeline", edit_timeline_url(timeline.edit_token), class: "btn btn-primary" %>
-              </div> 
-            <% end %>
-          </div>
-        </div>
-        <div class="tab-pane fade in" id="tab2">
-          <div class="container">
-            <div class="row">
-              <div class="col-sm-4 col-sm-offset-4">
-                <div class="light-well">
-                  <h2 class="page-header text-center">Edit <%= resource_name.to_s.humanize %></h2>
-
-                  <%= form_for resource, as: resource_name, url: registration_path(resource_name), html: { method: :put },
-                                html: { class: "form-horizontal center"} do |f| %>
-
-                    <div class="form-group">
-                      <%= f.email_field :email, autofocus: true, class: "form-control" %>
-                    </div>
-
-                    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-                      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-                    <% end %>
-
-                    <div class="form-group">
-                      <%= f.password_field :password, autocomplete: "off", placeholder: "New Password", class: "form-control" %>
-                      <p class="help-block"><i>leave blank if you don't want to change it</i><br />
-                    </div>
-
-                    <div class="form-group">
-                      <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirm New Password", class: "form-control" %>
-                      <% if @validatable %>
-                        <p class="help-block"><%= @minimum_password_length %> characters minimum</p>
-                      <% end %>
-                    </div>
-
-                    <div class="form-group">
-                      <%= f.password_field :current_password, autocomplete: "off", placeholder: "Current Password", class: "form-control" %>
-                      <p class="help-block"><i>we need your current password to confirm your changes</i><br />
-                    </div>
-
-                    <div class="actions">
-                      <%= f.submit "Update", class: "btn btn-primary btn-lg btn-block" %>
-                    </div>
-                    <%= devise_error_messages! %>
-                  <% end %>
-                </div>
-                <br>
-                <br>
-                <h3 class="page-header text-center">Cancel my account</h3>
-                <p>Unhappy? <%= button_to "Delete my account", registration_path(resource_name), class: "btn btn-danger btn-lg btn-block", data: { confirm: "Are you sure?" }, method: :delete %></p>
-                <%= link_to "Back", :back %>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-    
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
   </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+    <% if @minimum_password_length %>
+      <br />
+      <em><%= @minimum_password_length %> characters minimum</em>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.password_field :current_password, autocomplete: "off" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>
+<% end %>
+
+<h3>Cancel my account</h3>
+
+<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+<%= link_to "Back", :back %>
