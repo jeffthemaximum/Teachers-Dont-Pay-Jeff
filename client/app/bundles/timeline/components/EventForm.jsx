@@ -12,6 +12,8 @@ const EventForm = React.createClass ({
 
   getInitialState(){
     return({
+      shareLink: this.props.data.shareLink,
+      editLink: this.props.data.editLink,
       documents: [],
       events: this.props.data.events,
       title: "",
