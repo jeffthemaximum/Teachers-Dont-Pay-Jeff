@@ -109,7 +109,7 @@ const TimeLineApp = React.createClass({
     .catch(function(error){
       this.setState({saving: false});
       console.log(error);
-    })
+    }.bind(this))
   },
 
   clearErrors(){

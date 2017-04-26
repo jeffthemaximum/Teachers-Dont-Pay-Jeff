@@ -152,12 +152,12 @@ const EventForm = React.createClass ({
   },
 
   onSubmit(e){
-    this.setState({saving: true});
     e.preventDefault();
     let isErrors = this.validateForm();
     if (isErrors === true) {
       return;
     } else {
+      this.setState({saving: true});
       const requestConfig = {
         responseType: 'json',
         headers: ReactOnRails.authenticityHeaders(),

@@ -1,6 +1,11 @@
 class TimelinesController < ApplicationController
   before_action :no_container
 
+  def new
+    session.delete(:timeline_share_token)
+    redirect_to timeline_path
+  end
+
   def show
     @timeline = Timeline.find_by(share_token: params[:share_token])
     @sharing = true

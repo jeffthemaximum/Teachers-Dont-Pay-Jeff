@@ -39,11 +39,17 @@ const NavigationBar = (props) => {
               <li>
                 <a href="/users/edit">My timelines</a>
               </li>
+              <li>
+                <a href="/timelines/new">Start a new timeline</a>
+              </li>
             </ul>
             :
             <ul className="nav navbar-nav">
               <li>
                 <a href="/users/sign_in">Login</a>
+              </li>
+              <li>
+                <a href="/timelines/new">Start a new timeline</a>
               </li>
             </ul>
           }
