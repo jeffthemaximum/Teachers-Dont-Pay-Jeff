@@ -100,6 +100,7 @@ group :development, :test do
 
   # Jeff
   gem 'rb-readline'
+  gem 'httparty'
 end
 
 group :test  do

@@ -5,6 +5,51 @@ import axios from 'axios';
 import BaseComponent from 'libs/components/BaseComponent';
 
 const JefflatorApp = React.createClass({
+  getInitialState(){
+    return({
+      inputLanguage: "en",
+      outputLanguage: "es",
+      inputText: "Jeff is a nice guy who likes to ride his bike and play Nintendo.",
+      submitting: false,
+      translatedText: ""
+    })
+  },
+
+  handleTextChange(e){
+    this.setState({inputText: e.target.value})
+  },
+
+  handleInputLanguageChange(e){
+    this.setState({inputLanguage: e.target.value})
+  },
+
+  handleOutputLanguageChange(e){
+    this.setState({outputLanguage: e.target.value})
+  },
+
+  handleSubmit(e){
+
+    e.preventDefault();
+    this.setState({submitting: true});
+    const requestConfig = {
+      responseType: 'json',
+      headers: ReactOnRails.authenticityHeaders(),
+    };
+    const data = {
+      sentence: this.state.inputText,
+      inputLanguage: this.state.inputLanguage,
+      outputLanguage: this.state.outputLanguage
+    }
+    axios.get("/jefflate", {params: data}, requestConfig)
+    .then(function(response){
+      this.setState({translatedText: response.data.translated});
+    }.bind(this))
+    .catch(function(error){
+      // TODO error messaging
+      console.log(error);
+    }.bind(this))
+  },
+
   render(){
     return(
       <section id="contact">
@@ -15,39 +60,37 @@ const JefflatorApp = React.createClass({
         <div className="contact-section">
           <div className="container">
             <form>
-              <div className="col-md-6 form-line">
+              <div className="col-lg-6 col-sm-12 form-line">
                 <div className="form-group">
-                  <label for ="description"> Message</label>
-                  <textarea  className="form-control" id="description" placeholder="Enter Your Message"></textarea>
+                  <label for ="description"> Input text</label>
+                  <textarea onChange={this.handleTextChange} className="form-control" id="description">
+                    {this.state.inputText}
+                  </textarea>
                 </div>
-                <div className="form-group">
-                  <div className="dropdown">
-                    <button className="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Input Language
-                    <span className="caret"></span></button>
-                    <ul className="dropdown-menu">
-                      <li><a href="#">English</a></li>
-                      <li><a href="#">Spanish</a></li>
-                    </ul>
-                  </div>
+                <div className="form-group select-form-group">
+                    <label for="sel1">Input Language</label>
+                    <select onChange={this.handleInputLanguageChange} value={this.state.inputLanguage} className="form-control language-select" id="sel1">
+                      <option value="en">English</option>
+                      <option value="es">Spanish</option>
+                    </select>
                 </div>
-                <div className="form-group">
-                  <div className="dropdown">
-                    <button className="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Output Language
-                    <span className="caret"></span></button>
-                    <ul className="dropdown-menu">
-                      <li><a href="#">English</a></li>
-                      <li><a href="#">Spanish</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-6">
-                <div className="form-group">
-                  <label for ="description"> Message</label>
-                  <textarea  className="form-control" id="description" placeholder="Enter Your Message"></textarea>
+                <div className="form-group select-form-group output">
+                    <label for="sel1">Output Language</label>
+                    <select onChange={this.handleOutputLanguageChange} value={this.state.outputLanguage} className="form-control language-select" id="sel1">
+                      <option value="en">English</option>
+                      <option value="es">Spanish</option>
+                    </select>
                 </div>
                 <div>
-                  <button type="button" className="btn btn-default submit"><i className="fa fa-paper-plane" aria-hidden="true"></i>  Send Message</button>
+                  <button onClick={this.handleSubmit} type="button" className="btn btn-default submit">Jefflate!</button>
+                </div>
+              </div>
+              <div className="col-lg-6 col-sm-12">
+                <div className="form-group">
+                  <label for ="description"> Translated text</label>
+                  <textarea  value={this.state.translatedText} className="form-control" id="description" placeholder="Translated text will show up here">
+                    {this.state.translatedText}
+                  </textarea>
                 </div>
               </div>
             </form>

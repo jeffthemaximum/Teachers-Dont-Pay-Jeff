@@ -216,13 +216,26 @@ button.edit-share-btn {
   .submit{
     font-size: 1.1em;
     float: right;
-    width: 150px;
+    width: 100%;
     background-color: transparent;
     color: #fff;
   }
 
-  .dropdown-toggle {
+  select.language-select {
     background-color: transparent;
     color: #fff;
+    width: 150px;
+  }
+
+  .select-form-group {
+    display: inline-block;
+  }
+
+  .output {
+    margin-left: 10px;
+  }
+
+  section#contact {
+    height: 100vh;
   }
 }
