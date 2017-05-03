@@ -1,4 +1,12 @@
 <%= react_component(
+  "NavigationBarApp",
+  props: {
+    loggedIn: user_signed_in?
+  },
+  prerender: false)
+%>
+
+<%= react_component(
   "TimeLineApp",
   props: {
     shareToken: @timeline.share_token,
@@ -8,7 +16,8 @@
     sharing: @sharing,
     editing: @editing,
     timeline: @timeline
-  }, 
-  prerender: false) 
+  },
+  prerender: false)
 %>
 <div id="dummy"></div>
+

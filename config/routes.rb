@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   get '/landing', to: "pages#landing"
   get '/timeline', to: "pages#timeline"
+  get '/jefflator', to: "jefflator#index"
 
   resources :timelines, only: [:new]
   resources :timelines, as: :time, param: :share_token, only: [:show]

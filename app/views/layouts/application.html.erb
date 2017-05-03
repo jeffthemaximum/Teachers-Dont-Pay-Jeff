@@ -25,32 +25,23 @@
 </head>
 <body>
 
-<%= react_component(
-  "NavigationBarApp",
-  props: {
-    loggedIn: user_signed_in?
-  }, 
-  prerender: false) 
-%>
-
-<div class="<%= @no_container ? '' : 'container' %>">
-  <% if notice %>
-    <div class="alert alert-info" role="alert"><%= notice%>
-      <a href="#" class="close" data-dismiss="alert">&#215;</a>
-    </div>
-  <% end %>
-  <% if alert %>
-    <div class="alert alert-warning" role="alert"><%= alert%>
-      <a href="#" class="close" data-dismiss="alert">&#215;</a>
-    </div>
-  <% end %>
-
+  <div class="<%= @no_container ? '' : 'container' %>">
+    <% if notice %>
+      <div class="alert alert-info" role="alert"><%= notice%>
+        <a href="#" class="close" data-dismiss="alert">&#215;</a>
+      </div>
+    <% end %>
+    <% if alert %>
+      <div class="alert alert-warning" role="alert"><%= alert%>
+        <a href="#" class="close" data-dismiss="alert">&#215;</a>
+      </div>
+    <% end %>
+  </div>
   <%= yield %>
-</div>
 
-<!-- This is a placeholder for ReactOnRails to know where to render the store props for
-     client side hydration -->
-<%= redux_store_hydration_data %>
+  <!-- This is a placeholder for ReactOnRails to know where to render the store props for
+      client side hydration -->
+  <%= redux_store_hydration_data %>
 
 </body>
 <% if Rails.env == "production"  %>
