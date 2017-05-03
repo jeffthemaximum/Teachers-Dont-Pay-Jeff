@@ -59,6 +59,7 @@ gem 'paperclip', :git=> 'https://github.com/thoughtbot/paperclip', :ref => '523b
 gem 'delayed_job_active_record'
 gem 'annotate'
 gem "omniauth-google-oauth2"
+gem 'httparty'
 
 group :development do
   # Access an IRB console on exceptions page and /console in development
@@ -100,7 +101,6 @@ group :development, :test do
 
   # Jeff
   gem 'rb-readline'
-  gem 'httparty'
 end
 
 group :test  do
