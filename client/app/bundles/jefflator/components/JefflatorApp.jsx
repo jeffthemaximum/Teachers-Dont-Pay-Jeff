@@ -68,7 +68,9 @@ const JefflatorApp = React.createClass({
 
   render(){
     return(
-      <section id="contact">
+      <section
+        id="contact"
+      >
         <div className="section-content">
           <h1 className="section-header">Translate only <span className="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s"> nouns and verbs</span></h1>
           <h3>Enter as much text as you want. Jefflator will translate just the nouns and verbs in your text.</h3>
