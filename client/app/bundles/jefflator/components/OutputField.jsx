@@ -4,7 +4,7 @@ const OutputField = React.createClass({
 
   render(){
     return(
-      <div className="col-lg-6 col-sm-12">
+      <div>
 
         { this.props.data.submitting ?
 
