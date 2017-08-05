@@ -3,10 +3,8 @@
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
 <%= react_component(
-  "NavigationBarApp",
-  props: {
-    loggedIn: user_signed_in?
-  },
+  "NavigationBarJefflator",
+  props: {},
   prerender: false)
 %>
 
@@ -14,7 +12,9 @@
 
   <%= react_component(
     "JefflatorApp",
-    props: {},
+    props: {
+      loadingGifTag: image_tag("jefflator/seinfeld.gif")
+    },
     prerender: false)
   %>
   <div id="dummy"></div>

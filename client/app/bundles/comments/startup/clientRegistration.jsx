@@ -24,7 +24,7 @@ ReactOnRails.register({
   App,
   RouterApp,
   NavigationBarApp,
-  SimpleCommentScreen,
+  SimpleCommentScreen
 });
 
 ReactOnRails.registerStore({

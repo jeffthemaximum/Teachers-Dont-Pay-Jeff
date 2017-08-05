@@ -3,6 +3,8 @@ import ReactOnRails from 'react-on-rails';
 import axios from 'axios';
 
 import BaseComponent from 'libs/components/BaseComponent';
+import SubmitButton from "./SubmitButton"
+import OutputField from "./OutputField"
 
 const JefflatorApp = React.createClass({
   getInitialState(){
@@ -11,7 +13,7 @@ const JefflatorApp = React.createClass({
       outputLanguage: "es",
       inputText: "Jeff is a nice guy who likes to ride his bike and play Nintendo.",
       submitting: false,
-      translatedText: ""
+      translatedText: "",
     })
   },
 
@@ -30,24 +32,38 @@ const JefflatorApp = React.createClass({
   handleSubmit(e){
 
     e.preventDefault();
+
     this.setState({submitting: true});
+
     const requestConfig = {
       responseType: 'json',
       headers: ReactOnRails.authenticityHeaders(),
     };
+
     const data = {
       sentence: this.state.inputText,
       inputLanguage: this.state.inputLanguage,
       outputLanguage: this.state.outputLanguage
     }
+
     axios.get("/jefflate", {params: data}, requestConfig)
+
     .then(function(response){
-      this.setState({translatedText: response.data.translated});
+
+      this.setState({
+        translatedText: response.data.translated,
+        submitting: false
+      });
+
     }.bind(this))
+
     .catch(function(error){
       // TODO error messaging
       console.log(error);
+      this.setState({submitting: false});
+
     }.bind(this))
+
   },
 
   render(){
@@ -71,27 +87,26 @@ const JefflatorApp = React.createClass({
                     <label for="sel1">Input Language</label>
                     <select onChange={this.handleInputLanguageChange} value={this.state.inputLanguage} className="form-control language-select" id="sel1">
                       <option value="en">English</option>
-                      <option value="es">Spanish</option>
+                      {/* <option value="es">Spanish</option> */}
                     </select>
                 </div>
                 <div className="form-group select-form-group output">
                     <label for="sel1">Output Language</label>
                     <select onChange={this.handleOutputLanguageChange} value={this.state.outputLanguage} className="form-control language-select" id="sel1">
-                      <option value="en">English</option>
+                      {/* <option value="en">English</option> */}
                       <option value="es">Spanish</option>
                     </select>
                 </div>
-                <div>
-                  <button onClick={this.handleSubmit} type="button" className="btn btn-default submit">Jefflate!</button>
-                </div>
+                <SubmitButton
+                  data={this.state}
+                  onSubmit={this.handleSubmit}
+                />
               </div>
               <div className="col-lg-6 col-sm-12">
-                <div className="form-group">
-                  <label for ="description"> Translated text</label>
-                  <textarea  value={this.state.translatedText} className="form-control" id="description" placeholder="Translated text will show up here">
-                    {this.state.translatedText}
-                  </textarea>
-                </div>
+                <OutputField
+                  loadingGifTag={this.props.loadingGifTag}
+                  data={this.state}
+                />
               </div>
             </form>
           </div>
@@ -102,3 +117,9 @@ const JefflatorApp = React.createClass({
 });
 
 module.exports = JefflatorApp;
+
+// deactivate button when submitting === true
+// show gif while submitting === true
+// change header
+  // get rid of white
+  // only link to back

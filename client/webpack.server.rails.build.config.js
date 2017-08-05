@@ -17,7 +17,7 @@ module.exports = {
     'babel-polyfill',
     './app/bundles/comments/startup/serverRegistration',
     './app/bundles/timeline/startup/serverRegistration',
-    './app/bundles/jefflator/startup/clientRegistration',
+    './app/bundles/jefflator/startup/serverRegistration',
   ],
   output: {
     filename: 'server-bundle.js',
