@@ -60,6 +60,8 @@ gem 'delayed_job_active_record'
 gem 'annotate'
 gem "omniauth-google-oauth2"
 gem 'httparty'
+gem 'thredded', '~> 0.13.2'
+gem 'rails-ujs'
 
 group :development do
   # Access an IRB console on exceptions page and /console in development
