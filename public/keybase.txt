@@ -4,7 +4,7 @@ https://keybase.io/jeffmaxim
 
 I hereby claim:
 
-  * I am an admin of http://teachersdontpayjeff.com
+  * I am an admin of https://www.teachersdontpayjeff.com
   * I am jeffmaxim (https://keybase.io/jeffmaxim) on keybase.
   * I have a public key with fingerprint A6CE 7BED 8FFD B59C 68D1  2078 1715 3531 0075 785E
 
@@ -22,16 +22,16 @@ To do so, I am signing this object:
       "username": "jeffmaxim"
     },
     "service": {
-      "hostname": "teachersdontpayjeff.com",
-      "protocol": "http:"
+      "hostname": "www.teachersdontpayjeff.com",
+      "protocol": "https:"
     },
     "type": "web_service_binding",
     "version": 1
   },
-  "ctime": 1502227536,
+  "ctime": 1502228084,
   "expire_in": 157680000,
-  "prev": "c4c91ba4fedab4d1b336ea5cd94972259ce6f2eaf9c6ed7c27786f08847cc005",
-  "seqno": 36,
+  "prev": "17f8cf1646bb42317f485b1b1222f28ba8a80a28b8a3dfe5a4c49823651cebde",
+  "seqno": 38,
   "tag": "signature"
 }
 
@@ -41,30 +41,30 @@ which yields the signature:
 Version: Keybase OpenPGP v2.0.73
 Comment: https://keybase.io/crypto
 
-yMN9AnicbZJ9UBVVGMYvgoWMGCMI41fCIhiFzH5/XE3LlCwaYKBSGfW2u+fsZfm4
-e7l3L1xEKE0cEQkksJkCKRpSBxi+KvJrkoIxi8IukIIjWIiVQyhGNAijnWX0v/aP
-s3POPM/vfd73nE5/b5OfV8gShjC53Lu9fuj41GXacTg6MQ+TNJCLmfOwdDj3gxkA
-OnVLugowM4YTJI7LjMQDhWZpQWEFnKdFnoEkK1C0IkNG4YHMsgRN4gyUJJ7CKZ4G
-HC5zLC8AEtKMhItYNKaoNit02B2qTUdYkZUhJ0HAKwqQGEFmeYAKcTzBEQzFUASO
-cwyHqiBjquY0HCicJDphjKqhM7SxzMX7H/3j3DjBCxQrAElhRYkiURzIEwQhCTTD
-AJ6RaBo5eR4KksBDnOVxXkLZOQLnZMDQishyc7ldcziUEuIUIQCCl1kZLYwoEQRJ
-MlAEIkMIhtAJHTYxEyJ1GlSUTNGtZmL50Rg6zlZlaEzWaOWRRIeinAodTqDZdLuY
-azhiZC0TcewOTddkLQOJUnXdbjYYeq7dMOVAyfIIZ5FUG0AjRYZshFE1G2YmkFLW
-VYNPMDhJkhxDsdEYdNtVB7SohoJBY8DRZ5SB2Qgp07JASCKtQCBKNCAkimKhyMhA
-oAUO9SfIkFVIKCrojiDgZJLjeFbBeZ7mZBnHGcxoMMumYWajlC5aEdOpWm2i7nJA
-LP+bjp0+Ji8/0xPz5xlvzeS3IODxC0wLDDC11hdm7AuN4LvGgl5560n31SqV6nu2
-oYsdCAgfvjI1muNI9/926Xdjb/PN1emehaM98Q3uZbb2qCkwm5D0oDtKOzVZcsun
-Nnxk5HTT9V1LdiWtWNsXFl3/96rp5NqNVQe7O0nH4EXzjbM3grfs1da3pDTsT6i8
-ejK8sTSroqxUnKiwXh57prg9qM3jeXrw1fJfd7wQGNp9Pjjky7Z7U4Xfe98aTndZ
-EhPfy1l2pRNM9BPJn8SdCVhIlCV3171Y9/pkk/tk5NBTX91Z87Hv143/Zl6Sl29o
-vHv2ta7YDzb5PZwYuPyhQymPqT1ad+DMyOay22PPZckzTbd7fLeFfeHKrhXfP7Rh
-fm7VP62NgzOfVUfmVcyLAr6xwWlSWUNL6LXxd49mnVh57djidyLjV8Td1d8oOlW+
-4Mjg4Y92+8S35fv8HtFbUzQct7P0jq3myLnW0ZaM+qHhm/umLpRENF8AlecKNMv1
-1UzywMOUmF+Ki5a7Pt/oiP65L/W41v6Hd3+BZ9P2PW9WTry0Ze3NqKDVsSETP04m
-/XXfNR62NOG+lbAuWrTXvsc+crHUK6xAbEucdaSMVFXPrNs2+NvW5kup+/0KZzdP
-3ys8XU8ff5CfWuK/Li5GrKvxyj3wZwl1rDGwOKTQ3ZxzcKbjZXvU+rTZNWP9J1aW
-jk8Prcrv9fTE/6QP526t6X1+u62AGV/scZ7/D7cpyuE=
-=BepZ
+yMN5AnicbVJ7UFRVHAaMJTEIkYYKMLzVYErLPfe158JO9JB4qEjwRw9Juufec+Eu
+7IPdy3PDdNhBYaaw1GAkbBzRUsFprIFqkiCcxsAcGiiSRKGGVV4jTjymiOgso/91
+/jjn/M583/f7ft+cSyFr/IL9Ix/hgV9J+R7/vu5PS/xerzPqbgrZlQoq0U0V4tUD
+FynYpecVagqVSNGAoWmZR1BROYETVUGkISdBHjOCyHKqjHkVKrIgAI6heYwQZGkW
+coqJlk0CFBUGczyiJSqeUjVbPnY6nJpNJ7KSIGMTwgpUVQXxoixAhTQyQWACPMuz
+gKZNvIl0IcQCu8vHIOaQ5MJGzU7eSJG3au9/8Pd90wCKrCAqSBUkxDLEDoYAACRy
+PK9AHnEcYUKIRSRCTAuQhoh4NwHaJCs8p0qCadV3yaoccYlpFogKgLIgk42XEAAM
+w2NJkXgg+oAu7LRJVkzQFqyqVqlcs1JV8RR5LtVk7EvWN8o9SFlZmVHHklyAnS7F
+btMdUoWPZZTtVqLlcNp1u2wvIsACXXe4En1CeoVjlYlR3j3NPKTZFJIrYZQSHc1u
+oxIBQcq65msCeJphGDIYF0/hcofmxHmaD8GTLGiyfH1w6WqKKpRVIHACQhzDkpIj
+AQFEBmRUBiIJSpCWyAVKrKJiXuJkToQMK/BAxkjxpe7CxTY7lchC4lPKJ5ouLd8m
+6SVOTFV91537gJ9/sJ8hMMD34fyC14bd/4YJiw+vKMLYorHSM1/XsrUfT7w5WnSu
+bSb1xpmNUxVDGa0jp3dEn/74zu6MDdapd46dsny20sOZ1fj5utml/rGVgfnsljeu
+WDd+Ppz2pe6+3tY6+U3qzedGTmY+dLy5pX5h0zYm9GrP3M9s/QCOevzY5vjbcuEP
+aZ05xw9bY5LMKUMb4oZzdgXK6y/tq1a97ZU5jedrJuMSkpBr81x1w/TurisRuRev
+PWNtvA5yPQmePb83XbtYWtBSu3iw69GwqbvnxN6GoCOUZ/3yP7EWS7VhoXDCEzJ9
+IKdr9HD28GDW2VveU0uJoR3SrdCFy26zdiF62GR1XlA/2vlgYF/7iLr9W3jbPyr1
+tYEkL9VoaA56vvTddE6rTh33rtv6fci6ntzp9uJkt0Uy7+t0vPzYq08t66FpAYvp
+K2+NR54pTrc02L2VhbFZm6a8a6Mze2Nq458dWok09L4YZvuzvd7ZPHMVuH7M39m7
+tJQZsnj0j9aQ4dzZ2vyavr1PJ3NHFxduBNEZvCe2iwOBI/XCT/VJcf++d37b/uW2
+iCjr6MlCa+7e6l9eudP0xQsHZm5+sCVw/0tbPszecfYuWojpdDVkgZisQyPNUld4
+gP3r7eVPCtPu9CL3r0dOGJpCfhtcc6KG+uSvZGq8/+2AsbkUT82EIdac0h0eERt+
+OWFy7Kuq2TbbrkMt5o73+UH0t/GJjv8AeH3Eqg==
+=zmC2
 -----END PGP MESSAGE-----
 
 And finally, I am proving ownership of this host by posting or
