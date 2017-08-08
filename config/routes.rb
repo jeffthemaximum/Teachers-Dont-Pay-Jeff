@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   get '/timeline', to: "pages#timeline"
   get '/jefflator', to: "jefflator#index"
   get '/jefflate', to: "jefflator#jefflate"
+  get '/suggestion', to: "suggestion#index"
+  get '/suggest', to: "suggestion#suggest"
 
   resources :timelines, only: [:new]
   resources :timelines, as: :time, param: :share_token, only: [:show]

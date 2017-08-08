@@ -1,0 +1,75 @@
+==================================================================
+https://keybase.io/jeffmaxim
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://teachersdontpayjeff.com
+  * I am jeffmaxim (https://keybase.io/jeffmaxim) on keybase.
+  * I have a public key with fingerprint A6CE 7BED 8FFD B59C 68D1  2078 1715 3531 0075 785E
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01200c5b8df4649f69084a85e26934fce5f8dc6614205ebb830384d70c7689d2e45b0a",
+      "fingerprint": "a6ce7bed8ffdb59c68d12078171535310075785e",
+      "host": "keybase.io",
+      "key_id": "171535310075785e",
+      "kid": "010189369dbf6ab32768e8111b9455d85b4453588e9b98e06808b3037107cd54fa670a",
+      "uid": "fdbe0319d18c6c18c5ab11225eada519",
+      "username": "jeffmaxim"
+    },
+    "service": {
+      "hostname": "teachersdontpayjeff.com",
+      "protocol": "http:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1502227536,
+  "expire_in": 157680000,
+  "prev": "c4c91ba4fedab4d1b336ea5cd94972259ce6f2eaf9c6ed7c27786f08847cc005",
+  "seqno": 36,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.73
+Comment: https://keybase.io/crypto
+
+yMN9AnicbZJ9UBVVGMYvgoWMGCMI41fCIhiFzH5/XE3LlCwaYKBSGfW2u+fsZfm4
+e7l3L1xEKE0cEQkksJkCKRpSBxi+KvJrkoIxi8IukIIjWIiVQyhGNAijnWX0v/aP
+s3POPM/vfd73nE5/b5OfV8gShjC53Lu9fuj41GXacTg6MQ+TNJCLmfOwdDj3gxkA
+OnVLugowM4YTJI7LjMQDhWZpQWEFnKdFnoEkK1C0IkNG4YHMsgRN4gyUJJ7CKZ4G
+HC5zLC8AEtKMhItYNKaoNit02B2qTUdYkZUhJ0HAKwqQGEFmeYAKcTzBEQzFUASO
+cwyHqiBjquY0HCicJDphjKqhM7SxzMX7H/3j3DjBCxQrAElhRYkiURzIEwQhCTTD
+AJ6RaBo5eR4KksBDnOVxXkLZOQLnZMDQishyc7ldcziUEuIUIQCCl1kZLYwoEQRJ
+MlAEIkMIhtAJHTYxEyJ1GlSUTNGtZmL50Rg6zlZlaEzWaOWRRIeinAodTqDZdLuY
+azhiZC0TcewOTddkLQOJUnXdbjYYeq7dMOVAyfIIZ5FUG0AjRYZshFE1G2YmkFLW
+VYNPMDhJkhxDsdEYdNtVB7SohoJBY8DRZ5SB2Qgp07JASCKtQCBKNCAkimKhyMhA
+oAUO9SfIkFVIKCrojiDgZJLjeFbBeZ7mZBnHGcxoMMumYWajlC5aEdOpWm2i7nJA
+LP+bjp0+Ji8/0xPz5xlvzeS3IODxC0wLDDC11hdm7AuN4LvGgl5560n31SqV6nu2
+oYsdCAgfvjI1muNI9/926Xdjb/PN1emehaM98Q3uZbb2qCkwm5D0oDtKOzVZcsun
+Nnxk5HTT9V1LdiWtWNsXFl3/96rp5NqNVQe7O0nH4EXzjbM3grfs1da3pDTsT6i8
+ejK8sTSroqxUnKiwXh57prg9qM3jeXrw1fJfd7wQGNp9Pjjky7Z7U4Xfe98aTndZ
+EhPfy1l2pRNM9BPJn8SdCVhIlCV3171Y9/pkk/tk5NBTX91Z87Hv143/Zl6Sl29o
+vHv2ta7YDzb5PZwYuPyhQymPqT1ad+DMyOay22PPZckzTbd7fLeFfeHKrhXfP7Rh
+fm7VP62NgzOfVUfmVcyLAr6xwWlSWUNL6LXxd49mnVh57djidyLjV8Td1d8oOlW+
+4Mjg4Y92+8S35fv8HtFbUzQct7P0jq3myLnW0ZaM+qHhm/umLpRENF8AlecKNMv1
+1UzywMOUmF+Ki5a7Pt/oiP65L/W41v6Hd3+BZ9P2PW9WTry0Ze3NqKDVsSETP04m
+/XXfNR62NOG+lbAuWrTXvsc+crHUK6xAbEucdaSMVFXPrNs2+NvW5kup+/0KZzdP
+3ys8XU8ff5CfWuK/Li5GrKvxyj3wZwl1rDGwOKTQ3ZxzcKbjZXvU+rTZNWP9J1aW
+jk8Prcrv9fTE/6QP526t6X1+u62AGV/scZ7/D7cpyuE=
+=BepZ
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/jeffmaxim
+
+==================================================================
