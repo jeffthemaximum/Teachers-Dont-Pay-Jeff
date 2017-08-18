@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+const reactStringReplace = require('react-string-replace')
 
 const SuggestionApp = React.createClass({
   getInitialState(){
@@ -14,6 +15,23 @@ const SuggestionApp = React.createClass({
     this.setState({inputText: e.target.value})
   },
 
+  handleResponse(response){
+    const { difficult_words } = response.data
+    let outputText = this.state.inputText
+    let word;
+
+    _.each(difficult_words, (data) => {
+      word = data.word
+      outputText = reactStringReplace(outputText, word, (match, i) => (
+        <HoverSuggestion
+          data={data}
+        />
+        // make hover suggestion with react-portal-tooltip
+        // how to make this render on seperate spot?
+      ));
+    })
+
+  },
 
   handleSubmit(e){
 
@@ -33,10 +51,12 @@ const SuggestionApp = React.createClass({
     axios.get("/suggest", {params: data}, requestConfig)
 
     .then(function(response){
+
       this.setState({
-        translatedText: response.data.translated,
         submitting: false
-      });
+      })
+
+      this.handleResponse(response)
 
     }.bind(this))
 
