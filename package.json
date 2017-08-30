@@ -8,12 +8,12 @@
     "npm": "4.0.2"
   },
   "scripts": {
-    "postinstall": "cd client && npm install",
+    "postinstall": "cd client && npm install && npm install --save react-portal-tooltip",
     "test": "rspec && npm run test:client && npm run lint",
     "test:client": "(cd client && npm run test --silent)",
     "lint": "(cd client && npm run lint --silent)",
     "build:clean": "rm app/assets/webpack/*",
-    "build:production": "(cd client && npm install --save react-portal-tooltip && npm run build:production --silent)",
+    "build:production": "(cd client && npm run build:production --silent)",
     "build:production:client": "(cd client && npm run build:production:client --silent)",
     "build:production:server": "(cd client && npm run build:production:server --silent)",
     "build:client": "(cd client && npm run build:client --silent)",
