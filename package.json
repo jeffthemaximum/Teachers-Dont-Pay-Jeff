@@ -8,7 +8,7 @@
     "npm": "4.0.2"
   },
   "scripts": {
-    "postinstall": "cd client && npm install && npm install --save react-portal-tooltip",
+    "postinstall": "cd client && npm install && npm install --save react-portal-tooltip && npm install --save prop-types && npm install --save react-string-replace",
     "test": "rspec && npm run test:client && npm run lint",
     "test:client": "(cd client && npm run test --silent)",
     "lint": "(cd client && npm run lint --silent)",
