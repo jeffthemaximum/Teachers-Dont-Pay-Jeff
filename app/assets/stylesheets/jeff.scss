@@ -173,9 +173,10 @@ button.edit-share-btn {
     text-align: center;
 
   }
+
   #contact{
     font-family: 'Teko', sans-serif;
-    padding-top: 60px;
+    padding-top: 5px;
     width: 100%;
     width: 100vw;
     background: #3a6186; /* fallback for old browsers */
@@ -183,6 +184,15 @@ button.edit-share-btn {
     background: linear-gradient(to left, #3a6186 , #89253e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color : #fff;
   }
+
+  .suggestions#contact{
+
+    background: #396afc; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #396afc , #2948ff); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #396afc , #2948ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color : #fff;
+  }
+
   .contact-section{
     padding-top: 40px;
   }
@@ -233,13 +243,27 @@ button.edit-share-btn {
     margin-left: 10px;
   }
 
-  section#contact {
+  section.jeff {
     height: 100vh;
   }
 
+  section.suggestions {
+    min-height: 2000px;
+  }
+
   @media all and (min-width:0px) and (max-width: 768px) {
-    section#contact {
+    section.jeff {
       height: 120vh;
     }
   }
+}
+
+.difficult-word {
+  font-family: "proxima-nova", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  line-height: 2.0;
+}
+
+a.suggestion {
+  color: rgb(137, 37, 62);
 }
