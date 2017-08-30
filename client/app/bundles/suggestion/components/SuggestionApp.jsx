@@ -126,7 +126,9 @@ const SuggestionApp = React.createClass({
           <div>
             <div className="section-content">
               <h1 className="section-header">Help figure out <span className="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s"> hard words</span></h1>
-              <h3>Hover over the yellow words for help OR <a className="suggestion "href="/suggestion">Click to try your own text</a></h3>
+              <h3>Hover over the yellow words for help OR 
+                <a className="suggestion" onClick={() => window.location.href = "/suggestion"}> Click to try your own text</a>
+              </h3>
             </div>
             <hr/>
             <div className="contact-section">
