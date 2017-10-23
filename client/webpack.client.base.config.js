@@ -47,6 +47,7 @@ module.exports = {
       './app/bundles/timeline/startup/clientRegistration',
       './app/bundles/jefflator/startup/clientRegistration',
       './app/bundles/suggestion/startup/clientRegistration',
+      './app/bundles/random/startup/clientRegistration',
     ],
   },
   resolve: {

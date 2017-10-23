@@ -26,7 +26,9 @@ Rails.application.routes.draw do
   get '/s/:token', to: "suggestions#share"
   get '/suggestion', to: "suggestions#index"
   get '/suggest', to: "suggestions#suggest", as: :suggest_share
-  
+
+  get '/random', to: "random_lists#index"
+  post 'random_lists/pick', to: "random_lists#pick"
 
   resources :timelines, only: [:new]
   resources :timelines, as: :time, param: :share_token, only: [:show]
@@ -36,6 +38,7 @@ Rails.application.routes.draw do
 
   resources :comments
   resources :events
+  resources :random_students
   resources :contact_requests
 
   namespace :api do
@@ -44,7 +47,7 @@ Rails.application.routes.draw do
       resources :uploads, only: [:create]
     end
   end
-  
+
 
   mount ActionCable.server => "/cable"
 end

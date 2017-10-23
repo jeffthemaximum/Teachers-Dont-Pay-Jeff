@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170829222039) do
+ActiveRecord::Schema.define(version: 20171023020458) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -86,6 +86,22 @@ ActiveRecord::Schema.define(version: 20170829222039) do
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
     t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
+  end
+
+  create_table "random_lists", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_random_lists_on_user_id", using: :btree
+  end
+
+  create_table "random_students", force: :cascade do |t|
+    t.integer  "random_list_id"
+    t.boolean  "picked",         default: false
+    t.string   "name"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.index ["random_list_id"], name: "index_random_students_on_random_list_id", using: :btree
   end
 
   create_table "suggestions", force: :cascade do |t|
@@ -358,6 +374,8 @@ ActiveRecord::Schema.define(version: 20170829222039) do
 
   add_foreign_key "documents", "events"
   add_foreign_key "events", "timelines"
+  add_foreign_key "random_lists", "users"
+  add_foreign_key "random_students", "random_lists"
   add_foreign_key "thredded_messageboard_users", "thredded_messageboards", on_delete: :cascade
   add_foreign_key "thredded_messageboard_users", "thredded_user_details", on_delete: :cascade
   add_foreign_key "thredded_user_post_notifications", "thredded_posts", column: "post_id", on_delete: :cascade

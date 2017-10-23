@@ -18,7 +18,8 @@ module.exports = {
     './app/bundles/comments/startup/serverRegistration',
     './app/bundles/timeline/startup/serverRegistration',
     './app/bundles/jefflator/startup/serverRegistration',
-    './app/bundles/suggestion/startup/serverRegistration'
+    './app/bundles/suggestion/startup/serverRegistration',
+    './app/bundles/random/startup/serverRegistration'
   ],
   output: {
     filename: 'server-bundle.js',

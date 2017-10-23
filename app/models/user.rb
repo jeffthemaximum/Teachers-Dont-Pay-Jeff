@@ -26,6 +26,7 @@ class User < ApplicationRecord
   devise :omniauthable, :omniauth_providers => [:google_oauth2]
 
   has_many :user_timeline_relationships
+  has_many :random_lists
   has_many :timelines, :through => :user_timeline_relationships do
     def creator
       where('user_timeline_relationships.primary = ?', true)
