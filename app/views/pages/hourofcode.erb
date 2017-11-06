@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<!--[if IE 9 ]><html class="ie ie9 no-js" lang="en"><![endif]-->
+<!--[if gt IE 9 | !IE]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>TDPJ</title>
+  <meta name="description" content="A bunch of free EdTech tools made by real life teachers.">
+  <meta name="keywords" content="EdTech, Free, Discussion Boards, Timeline">
+  <meta name="author" content="Jeff Maxim">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="icon" href="assets/img/favicon.ico">
+
+  <%= stylesheet_link_tag "landing/bootstrap.min" %>
+  <%= stylesheet_link_tag "landing/vendor" %>
+  <%= stylesheet_link_tag "landing/style" %>
+  <%= stylesheet_link_tag "landing/custom" %>
+  <!--[if lte IE 9]><!-->
+  <%= javascript_include_tag "landing/vendor/html5shiv.min.js" %>
+  <!--<![endif]-->
+</head>
+<body>
+
+  <div class="site">
+    <div class="site-loader">
+      <div class="site-loader-spinner"></div>
+    </div> <!-- .site-loader -->
+
+    <div class="site-canvas">
+      <header class="site-header">
+        <nav class="navbar navbar-theme">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <div class="navbar-brand-wrap">
+                <a class="navbar-brand" href="#">
+                  <%= image_tag("site-header-logo-2.png") %>
+                </a>
+              </div>
+            </div> <!-- .navbar-header -->
+
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="#home">Home</a></li>
+                <li><a href="#about">The Tools</a></li>
+                <li><a href="#brief_1">More Info</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="audio-toggle"><a href="#"><i class="fa fa-volume-up"></i></a></li>
+              </ul>
+            </div> <!-- .navbar-collapse -->
+          </div>
+        </nav>
+      </header> <!-- .site-header -->
+      <main class="site-main">
+        <div id="home" class="section block-primary position-r align-c-xs-max">
+          <div id="particles-js" class="site-bg">
+            <div class="site-bg-img"></div>
+            <div class="site-bg-video"></div>
+            <div class="site-bg-overlay"></div>
+            <div class="site-bg-effect layer" data-depth=".30"></div>
+            <canvas class="site-bg-canvas layer" data-depth=".30"></canvas>
+          </div> <!-- .site-bg -->
+
+          <div class="container">
+            <div class="row row-table">
+              <div class="col-sm-6">
+                <div class="col-inner" data-sr="left">
+                  <div class="section-heading">
+                    <h5>Teachers don't pay Jeff</h5>
+                    <h1>Free EdTech for teachers and students</h1>
+                    <p>Made by teachers, for teachers, for free. No subscriptions or ads, ever.</p>
+                  </div> <!-- .section-heading -->
+                  <div class="section-content">
+                    <a class="btn btn-pink m-y-5" href="#about">Use the tools</a>
+
+                  </div> <!-- .section-content -->
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-p-l-1 m-t-60-xs-max">
+                <div class="col-inner clearfix">
+                  <%= image_tag("landing/home.png", class: "img-responsive float-r-sm-min m-x-auto-xs-max", data: {sr: "right"}) %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> <!-- #home -->
+
+        <div id="about" class="section p-a-0 align-c">
+          <div class="container-fluid p-x-0">
+            <div class="row row-table">
+              <div class="col-sm-6 block-warning p-x-30-sm-max p-x-60-md-min p-t-20-sm-min align-t-sm-min">
+                <div class="col-inner p-y-50-sm-min p-y-30-xs-max max-width m-x-auto-xs-max">
+                  <div class="icon-box _center">
+                    <div class="icon-box-media">
+                      <%= image_tag("icon/rocket.png", data: {sr: "bottom"}) %>
+                    </div>
+                    <div class="icon-box-heading">
+                      <h3>Jeffity</h3>
+                    </div>
+                    <div class="icon-box-content">
+                      <p>Votable discussion boards for classrooms. Allows teachers, students, and parents to participate in votable class discussions, all safely moderated and controlled.</p>
+                      <a target="_blank" class="btn btn-default" href="http://www.jeffity.com">Go there!</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-6 block-light p-x-30-sm-max p-x-60-md-min p-t-20-sm-min align-t-sm-min">
+                <div class="col-inner p-y-50-sm-min p-y-30-xs-max max-width m-x-auto-xs-max">
+                  <div class="icon-box _center">
+                    <div class="icon-box-media">
+                      <%= image_tag("icon/crown.png", data: {sr: "bottom"}) %>
+                    </div>
+                    <div class="icon-box-heading">
+                      <h3>Push to Classroom</h3>
+                    </div>
+                    <div class="icon-box-content">
+                      <p>Google Chrome extension that allows teachers to instantly share any link to their Google Classroom classes as an announcement or an assignment.</p>
+                      <a target="_blank" class="btn btn-default" href="https://chrome.google.com/webstore/detail/push-to-classroom/jbneakgkpdfcjnolohhnbahjcbkleiji?hl=en-US">Go there!</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row row-table">
+              <div class="col-sm-6 block-pink p-x-30-sm-max p-x-60-md-min p-t-20-sm-min align-t-sm-min">
+                <div class="col-inner p-y-50-sm-min p-y-30-xs-max max-width m-x-auto-xs-max">
+                  <div class="icon-box _center">
+                    <div class="icon-box-media">
+                      <%= image_tag("icon/diamond.png", data: {sr: "bottom"}) %>
+                    </div>
+                    <div class="icon-box-heading">
+                      <h3>Jeffline</h3>
+                    </div>
+                    <div class="icon-box-content">
+                      <p>Make a free timeline right in your browser. Allows students to chronologically order historical, literary, or nonfiction events in a beautiful visual timeline. They can be shared, edited, downloaded, printed, or exported to Google Drive.</p>
+                      <a target="_blank" class="btn btn-default" href="/timeline">Go there!</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-6 block-success p-x-30-sm-max p-x-60-md-min p-t-20-sm-min align-t-sm-min">
+                <div class="col-inner p-y-50-sm-min p-y-30-xs-max max-width m-x-auto-xs-max">
+                  <div class="icon-box _center">
+                    <div class="icon-box-media">
+                      <%= image_tag("site-footer-logo.png", data: {sr: "bottom"}) %>
+                    </div>
+                    <div class="icon-box-heading">
+                      <h3>Jefflator</h3>
+                    </div>
+                    <div class="icon-box-content">
+                      <p>A free translation service in a browser. Helps language learners by only translating the nouns and verbs in a sentence. Helps language learners move between languages more easily.</p>
+                      <a target="_blank" class="btn btn-default" href="/jefflator">Go there!</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> <!-- #about -->
+
+        <div id="brief_1" class="section block-default align-c-xs-max">
+          <div class="container">
+            <div class="row row-table">
+              <div class="col-sm-6">
+                <div class="col-inner">
+                  <div class="section-heading">
+                    <h5>No ads, subscriptions, or fees</h5>
+                    <h2>Free forever</h2>
+                    <p><b>Teachers don't pay Jeff</b> is a bunch  of EdTech tools made by Jeff Maxim and Emily Barker. They're completely free, because we think teachers, students, and schools should have access to quality, free web tools.</p>
+                  </div> <!-- .section-heading -->
+
+                </div>
+              </div>
+              <div class="col-sm-6 m-t-60-xs-max p-l-60-md-min">
+                <div class="col-inner clearfix">
+                  <%= image_tag("landing-1.jpg", class: "img-responsive float-r-sm-min m-x-auto-xs-max", data: {sr: "right"}) %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> <!-- #brief_1 -->
+
+        <div id="brief_2" class="section block-warning align-c-xs-max">
+          <div class="container">
+            <div class="row row-table">
+              <div class="col-sm-6 m-b-60-xs-max p-r-60-md-min">
+                <div class="col-inner clearfix">
+                  <%= image_tag("landing-2.jpg", class: "img-responsive float-l-sm-min m-x-auto-xs-max", data: {sr: "left"}) %>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="col-inner">
+                  <div class="section-heading">
+                    <h5>Made by real life teachers</h5>
+                    <h2>Who are Jeff and Emily?</h2>
+                  </div> <!-- .section-heading -->
+                  <div class="section-content">
+                    <p>Jeff Maxim and Emily Barker made <b>Teachers don't pay Jeff</b>. They're real life, NYC, public school teachers who know how to code. They wanted to share free EdTech tools with other teachers, so they made these!</p>
+                    <a class="btn btn-pink m-y-5" href="http://jeffity.com/commons/partners">Learn more</a>
+                  </div> <!-- .section-content -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> <!-- #brief_2 -->
+
+        <div id="brief_3" class="section block-success align-c-xs-max">
+          <div class="container">
+            <div class="row row-table">
+              <div class="col-sm-6">
+                <div class="col-inner">
+                  <div class="section-heading">
+                    <h5>Open to feedback</h5>
+                    <h2>Always adding more tools!</h2>
+                    <p>We want to make stuff that you want to use! Have an idea for a free EdTech tool that you want? Let us know!</p>
+                  </div> <!-- .section-heading -->
+                  <div class="section-content">
+
+
+                    <a class="btn btn-invert m-y-5" href="#contact">Contact us</a>
+                  </div> <!-- .section-content -->
+                </div>
+              </div>
+              <div class="col-sm-6 m-t-60-xs-max p-l-60-md-min">
+                <div class="col-inner clearfix">
+                  <%= image_tag("landing-3.jpg", class: "img-responsive float-r-sm-min m-x-auto-xs-max", data: {sr: "right"}) %>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> <!-- #brief_3 -->
+
+        <div id="contact" class="section block-default">
+          <div class="container">
+            <div class="section-heading text-center">
+
+              <h2>Get in touch with us</h2>
+              <p> Do you love <b>Teachers don't pay Jeff</b>? Hate it? Have a question? Let us know :)</p>
+            </div>
+            <div class="row section-content m-t-60-sm-min">
+              <div class="col-sm-6 col-md-5">
+                <div class="col-inner">
+
+                  <div class="icon-box _left">
+                    <div class="icon-box-media">
+                      <%= image_tag("icon/mail.png", data: {sr: "bottom"}) %>
+                    </div>
+                    <div class="icon-box-heading">
+                      <h4>Email Address</h4>
+                    </div>
+                    <div class="icon-box-content font-sub font-italic">
+                      <span>frey.maxim@gmail.com</span>
+                      <br>
+                      <span>jeff@mrmaxim.org</span>
+                    </div>
+                  </div>
+
+                  <div class="icon-box _left">
+                    <div class="icon-box-media">
+                      <%= image_tag("icon/pin.png", data: {sr: "bottom"}) %>
+                    </div>
+                    <div class="icon-box-heading">
+                      <h4>Address</h4>
+                    </div>
+                    <div class="icon-box-content font-sub font-italic">
+                      <span>305 West 92nd Street</span>
+                      <br>
+                      <span>New York, NY 10025</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-offset-1 m-t-60-xs-max">
+                <div class="col-inner">
+                  <%= form_for @contact_request, :html => {:class => '_default', :id => 'contactForm'} do |f| %>
+                    <div class="form-group required">
+                      <label class="form-label" for="contactName">Your name</label>
+                      <%= f.text_field :name, class: "form-control", id: "contactName" %>
+                    </div>
+                    <div class="form-group required">
+                      <label class="form-label" for="contactEmail">Email address</label>
+                      <%= f.text_field :email, class: "form-control", id: "contactName" %>
+                    </div>
+                    <div class="form-group required">
+                      <label class="form-label" for="contactMessage">Message</label>
+                      <%= f.text_area :message, class: "form-control", id: "contactName", rows: 4 %>
+                    </div>
+                    <div class="btn-wrap">
+                      <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                    </div>
+                    <div class="form-notify"></div>
+                  </form> <!-- #contactForm -->
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div> <!-- #contact -->
+        <div id="map-canvas"></div> <!-- #map-canvas -->
+      </main> <!-- .site-main -->
+      <footer class="site-footer block-invert">
+        <div class="container">
+          <%= image_tag("site-header-logo-2.png", class: "site-footer-logo img-responsive", data: {sr: "bottom"}) %>
+          <ul class="site-footer-social-list">
+            <li><a href="https://www.facebook.com/frey.maxim" target="_blank">Facebook</a></li>
+            <li><a href="https://twitter.com/jeffthemaximum" target="_blank">Twitter</a></li>
+            <li><a href="https://www.instagram.com/jeffthemaximum/" target="_blank">Instagram</a></li>
+            <li><a href="https://www.linkedin.com/in/jeffmaxim/" target="_blank">LinkedIn</a></li>
+          </ul>
+          <p class="site-footer-copyright">2017 © <a href="#" target="_blank">Jeff Maxim</a> | all rights reserved.</p>
+        </div>
+      </footer> <!-- .site-footer -->
+    </div>
+  </div>
+
+  <%= javascript_include_tag "landing/vendor/jquery-1.11.3.min.js" %>
+  <%= javascript_include_tag "landing/vendor/bootstrap.min.js" %>
+  <%= javascript_include_tag "landing/vendor/plugin.js" %>
+  <%= javascript_include_tag "landing/variable.js" %>
+  <%= javascript_include_tag "landing/main.js" %>
+
+<% if Rails.env == "production"  %>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-54793829-7', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+<% end %>
+
+</body>
+</html>

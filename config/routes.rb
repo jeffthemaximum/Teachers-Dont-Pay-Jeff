@@ -26,7 +26,10 @@ Rails.application.routes.draw do
   get '/s/:token', to: "suggestions#share"
   get '/suggestion', to: "suggestions#index"
   get '/suggest', to: "suggestions#suggest", as: :suggest_share
-  
+
+  # random stuff
+  get '/hourofcode', to: "pages#hourofcode"
+
 
   resources :timelines, only: [:new]
   resources :timelines, as: :time, param: :share_token, only: [:show]
@@ -44,7 +47,7 @@ Rails.application.routes.draw do
       resources :uploads, only: [:create]
     end
   end
-  
+
 
   mount ActionCable.server => "/cable"
 end
