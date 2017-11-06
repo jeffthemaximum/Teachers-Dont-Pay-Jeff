@@ -1,0 +1,20 @@
+.site-header {
+  background-color: #212121;
+}
+
+#intro {
+  margin-top: 90px;
+}
+
+h4 {
+  text-transform: none;
+}
+
+ul {
+  text-align: left;
+}
+
+a,
+.block-warning a:not(.btn) {
+  color: #337ab7;
+}

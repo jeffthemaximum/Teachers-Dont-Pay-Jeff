@@ -22,6 +22,7 @@ Rails.application.config.assets.precompile +=
     "landing/bootstrap.min.css",
     "landing/style.css",
     "landing/custom.css",
+    "landing/hoc_custom.css",
 
     "landing/vendor/jquery-1.11.3.min.js",
     "landing/vendor/bootstrap.min.js",

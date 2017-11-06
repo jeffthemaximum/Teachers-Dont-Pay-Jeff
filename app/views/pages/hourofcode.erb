@@ -17,7 +17,7 @@
   <%= stylesheet_link_tag "landing/bootstrap.min" %>
   <%= stylesheet_link_tag "landing/vendor" %>
   <%= stylesheet_link_tag "landing/style" %>
-  <%= stylesheet_link_tag "landing/custom" %>
+  <%= stylesheet_link_tag "landing/hoc_custom" %>
   <!--[if lte IE 9]><!-->
   <%= javascript_include_tag "landing/vendor/html5shiv.min.js" %>
   <!--<![endif]-->
@@ -34,12 +34,7 @@
         <nav class="navbar navbar-theme">
           <div class="container">
             <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
+
               <div class="navbar-brand-wrap">
                 <a class="navbar-brand" href="#">
                   <%= image_tag("site-header-logo-2.png") %>
@@ -47,138 +42,66 @@
               </div>
             </div> <!-- .navbar-header -->
 
-            <div class="collapse navbar-collapse" id="navbar-collapse">
-              <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="#home">Home</a></li>
-                <li><a href="#about">The Tools</a></li>
-                <li><a href="#brief_1">More Info</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li class="audio-toggle"><a href="#"><i class="fa fa-volume-up"></i></a></li>
-              </ul>
-            </div> <!-- .navbar-collapse -->
+
           </div>
         </nav>
       </header> <!-- .site-header -->
       <main class="site-main">
-        <div id="home" class="section block-primary position-r align-c-xs-max">
-          <div id="particles-js" class="site-bg">
-            <div class="site-bg-img"></div>
-            <div class="site-bg-video"></div>
-            <div class="site-bg-overlay"></div>
-            <div class="site-bg-effect layer" data-depth=".30"></div>
-            <canvas class="site-bg-canvas layer" data-depth=".30"></canvas>
-          </div> <!-- .site-bg -->
-
+        <div id="intro" class="section block-default align-c-xs-max">
           <div class="container">
             <div class="row row-table">
-              <div class="col-sm-6">
-                <div class="col-inner" data-sr="left">
-                  <div class="section-heading">
-                    <h5>Teachers don't pay Jeff</h5>
-                    <h1>Free EdTech for teachers and students</h1>
-                    <p>Made by teachers, for teachers, for free. No subscriptions or ads, ever.</p>
-                  </div> <!-- .section-heading -->
-                  <div class="section-content">
-                    <a class="btn btn-pink m-y-5" href="#about">Use the tools</a>
-
-                  </div> <!-- .section-content -->
-                </div>
-              </div>
-              <div class="col-sm-6 col-md-p-l-1 m-t-60-xs-max">
-                <div class="col-inner clearfix">
-                  <%= image_tag("landing/home.png", class: "img-responsive float-r-sm-min m-x-auto-xs-max", data: {sr: "right"}) %>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> <!-- #home -->
-
-        <div id="about" class="section p-a-0 align-c">
-          <div class="container-fluid p-x-0">
-            <div class="row row-table">
-              <div class="col-sm-6 block-warning p-x-30-sm-max p-x-60-md-min p-t-20-sm-min align-t-sm-min">
-                <div class="col-inner p-y-50-sm-min p-y-30-xs-max max-width m-x-auto-xs-max">
-                  <div class="icon-box _center">
-                    <div class="icon-box-media">
-                      <%= image_tag("icon/rocket.png", data: {sr: "bottom"}) %>
-                    </div>
-                    <div class="icon-box-heading">
-                      <h3>Jeffity</h3>
-                    </div>
-                    <div class="icon-box-content">
-                      <p>Votable discussion boards for classrooms. Allows teachers, students, and parents to participate in votable class discussions, all safely moderated and controlled.</p>
-                      <a target="_blank" class="btn btn-default" href="http://www.jeffity.com">Go there!</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-sm-6 block-light p-x-30-sm-max p-x-60-md-min p-t-20-sm-min align-t-sm-min">
-                <div class="col-inner p-y-50-sm-min p-y-30-xs-max max-width m-x-auto-xs-max">
-                  <div class="icon-box _center">
-                    <div class="icon-box-media">
-                      <%= image_tag("icon/crown.png", data: {sr: "bottom"}) %>
-                    </div>
-                    <div class="icon-box-heading">
-                      <h3>Push to Classroom</h3>
-                    </div>
-                    <div class="icon-box-content">
-                      <p>Google Chrome extension that allows teachers to instantly share any link to their Google Classroom classes as an announcement or an assignment.</p>
-                      <a target="_blank" class="btn btn-default" href="https://chrome.google.com/webstore/detail/push-to-classroom/jbneakgkpdfcjnolohhnbahjcbkleiji?hl=en-US">Go there!</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row row-table">
-              <div class="col-sm-6 block-pink p-x-30-sm-max p-x-60-md-min p-t-20-sm-min align-t-sm-min">
-                <div class="col-inner p-y-50-sm-min p-y-30-xs-max max-width m-x-auto-xs-max">
-                  <div class="icon-box _center">
-                    <div class="icon-box-media">
-                      <%= image_tag("icon/diamond.png", data: {sr: "bottom"}) %>
-                    </div>
-                    <div class="icon-box-heading">
-                      <h3>Jeffline</h3>
-                    </div>
-                    <div class="icon-box-content">
-                      <p>Make a free timeline right in your browser. Allows students to chronologically order historical, literary, or nonfiction events in a beautiful visual timeline. They can be shared, edited, downloaded, printed, or exported to Google Drive.</p>
-                      <a target="_blank" class="btn btn-default" href="/timeline">Go there!</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-sm-6 block-success p-x-30-sm-max p-x-60-md-min p-t-20-sm-min align-t-sm-min">
-                <div class="col-inner p-y-50-sm-min p-y-30-xs-max max-width m-x-auto-xs-max">
-                  <div class="icon-box _center">
-                    <div class="icon-box-media">
-                      <%= image_tag("site-footer-logo.png", data: {sr: "bottom"}) %>
-                    </div>
-                    <div class="icon-box-heading">
-                      <h3>Jefflator</h3>
-                    </div>
-                    <div class="icon-box-content">
-                      <p>A free translation service in a browser. Helps language learners by only translating the nouns and verbs in a sentence. Helps language learners move between languages more easily.</p>
-                      <a target="_blank" class="btn btn-default" href="/jefflator">Go there!</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> <!-- #about -->
-
-        <div id="brief_1" class="section block-default align-c-xs-max">
-          <div class="container">
-            <div class="row row-table">
-              <div class="col-sm-6">
+              <div class="col-sm-12">
                 <div class="col-inner">
                   <div class="section-heading">
-                    <h5>No ads, subscriptions, or fees</h5>
-                    <h2>Free forever</h2>
-                    <p><b>Teachers don't pay Jeff</b> is a bunch  of EdTech tools made by Jeff Maxim and Emily Barker. They're completely free, because we think teachers, students, and schools should have access to quality, free web tools.</p>
-                  </div> <!-- .section-heading -->
+                    <h2>Hour of Code!</h2>
+                    <p>
+                      Today you'll learn about <b>Hour of Code</b> and how to implement it in your classroom. This website will live here forever, so you can some back and use
+                      these resources whenever you want :)
+                    </p>
+                    <p>
+                      If there's some typos, I apologize, but you can correct
+                      them <a href='https://github.com/jeffthemaximum/Teachers-Dont-Pay-Jeff'>here</a> if you want.
+                    </p>
+                    <p>
+                      You can learn more about me <a href='https://www.linkedin.com/in/jeffmaxim/'>here!</a>
+                    </p>
+                    <h4>
+                      tl;dr
+                    </h4>
+                    <ul>
+                      <li>
+                        What is Hour of Code?
+                      </li>
+                      <li>
+                        What can I do for Hour of Code?
+                      </li>
+                      <li>
+                        What are the associated standards?
+                      </li>
+                      <li>
+                        Why teach coding?
+                      </li>
+                      <li>
+                        How does coding progress from K-5 and beyond?
+                      </li>
+                      <li>
+                        You don't have to know how to code to teach how to code!
+                      </li>
+                      <li>
+                        What are the associated standards?
+                      </li>
+                      <li>
+                        Coding vs. Computer Science
+                      </li>
+                      <li>
+                        Doing and Discovery works best
+                      </li>
+                      <li>
+                        How to keep momentum after Hour of Code?
+                      </li>
 
+                    </ul>
+                  </div> <!-- .section-heading -->
                 </div>
               </div>
               <div class="col-sm-6 m-t-60-xs-max p-l-60-md-min">
@@ -201,12 +124,30 @@
               <div class="col-sm-6">
                 <div class="col-inner">
                   <div class="section-heading">
-                    <h5>Made by real life teachers</h5>
-                    <h2>Who are Jeff and Emily?</h2>
+                    <h2>What is Hour of Code?</h2>
                   </div> <!-- .section-heading -->
                   <div class="section-content">
-                    <p>Jeff Maxim and Emily Barker made <b>Teachers don't pay Jeff</b>. They're real life, NYC, public school teachers who know how to code. They wanted to share free EdTech tools with other teachers, so they made these!</p>
-                    <a class="btn btn-pink m-y-5" href="http://jeffity.com/commons/partners">Learn more</a>
+                    <ul>
+                      <li>
+                        The main hour of code website is <a href='https://hourofcode.com/us'>here</a>
+                      </li>
+                      <li>
+                        The intro video is <a href='https://youtu.be/SrnvvWDm73k'>here</a>
+                      </li>
+                      <li>
+                        The activities are <a href='https://hourofcode.com/us/learn'>here</a>. You can filter by
+                        age, grade, experience level, and many other things.
+                      </li>
+                      <li>
+                        The activities are <a href='https://hourofcode.com/us/learn'>here</a>. You can filter by
+                        age, grade, experience level, and many other things. My favorite are the Social Studies
+                        and Language Arts activities!
+                      </li>
+                      <li>
+                        Use those activities above and try it out! You have 10 minutes. This is you DO NOW!
+                        Can't one to choose? Try this one <a href='https://game.kodable.com/hour-of-code'>here</a>.
+                      </li>
+                    </ul>
                   </div> <!-- .section-content -->
                 </div>
               </div>
