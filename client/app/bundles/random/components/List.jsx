@@ -15,17 +15,30 @@ class List extends React.Component {
     const pickedStudents = random_students.filter((s) => { return s.picked === true; })
     const unpickedStudents = random_students.filter((s) => { return s.picked === false; })
 
-    const pickedNames = pickedStudents.map((s) => {
-      return (
-        <p key={s.id}>{s.name}</p>
-      )
-    })
+    const pickedNames = pickedStudents
+      .sort(function(a,b){
+        var c = new Date(a.picked_at);
+        var d = new Date(b.picked_at);
+        return c-d;
+      })
+      .map((s) => {
+        return (
+          <p key={s.id}>{s.name}</p>
+        )
+      })
 
-    const unpickedNames = unpickedStudents.map((s) => {
-      return (
-        <p key={s.id}>{s.name}</p>
-      )
-    })
+    const unpickedNames = unpickedStudents
+      .sort(function(a,b){
+        var c = new Date(a.created_at);
+        var d = new Date(b.created_at);
+        return c-d;
+      })
+      .map((s) => {
+        return (
+          <p key={s.id}>{s.name}</p>
+        )
+      })
+
     return (
       <Grid>
         <Row className="show-grid">

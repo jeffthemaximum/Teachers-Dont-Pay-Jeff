@@ -10,10 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171023020458) do
+ActiveRecord::Schema.define(version: 20171101231812) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "hstore"
 
   create_table "comments", force: :cascade do |t|
     t.string   "author",     default: "", null: false
@@ -90,8 +91,9 @@ ActiveRecord::Schema.define(version: 20171023020458) do
 
   create_table "random_lists", force: :cascade do |t|
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.jsonb    "order",      default: []
     t.index ["user_id"], name: "index_random_lists_on_user_id", using: :btree
   end
 
@@ -101,6 +103,7 @@ ActiveRecord::Schema.define(version: 20171023020458) do
     t.string   "name"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
+    t.datetime "picked_at"
     t.index ["random_list_id"], name: "index_random_students_on_random_list_id", using: :btree
   end
 

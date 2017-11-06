@@ -28,7 +28,8 @@ Rails.application.routes.draw do
   get '/suggest', to: "suggestions#suggest", as: :suggest_share
 
   get '/random', to: "random_lists#index"
-  post 'random_lists/pick', to: "random_lists#pick"
+  post '/random_lists/pick', to: "random_lists#pick"
+  post '/random_lists/undo', to: 'random_lists#undo'
 
   resources :timelines, only: [:new]
   resources :timelines, as: :time, param: :share_token, only: [:show]
