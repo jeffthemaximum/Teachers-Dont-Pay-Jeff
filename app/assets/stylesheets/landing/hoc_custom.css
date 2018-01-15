@@ -1,0 +1,24 @@
+.site-header {
+  background-color: #212121;
+}
+
+#intro {
+  margin-top: 90px;
+}
+
+h4 {
+  text-transform: none;
+}
+
+ul {
+  text-align: left;
+}
+
+a,
+.block-warning a:not(.btn),
+.block-success a:not(.btn),
+.block-pink a:not(.btn) {
+  color: #337ab7;
+}
+
+/* https://scratch.mit.edu/projects/161842058/ */

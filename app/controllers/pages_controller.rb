@@ -54,6 +54,11 @@ class PagesController < ApplicationController
     render :layout => false
   end
 
+  def hourofcode
+    @contact_request = ContactRequest.new
+    render :layout => false
+  end
+
   private
 
   def set_comments

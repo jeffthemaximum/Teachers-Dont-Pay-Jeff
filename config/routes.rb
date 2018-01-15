@@ -31,6 +31,9 @@ Rails.application.routes.draw do
   post '/random_lists/pick', to: "random_lists#pick"
   post '/random_lists/undo', to: 'random_lists#undo'
 
+  # random stuff
+  get '/hourofcode', to: "pages#hourofcode"
+
   resources :timelines, only: [:new]
   resources :timelines, as: :time, param: :share_token, only: [:show]
   resources :timelines, param: :edit_token, only: [:edit]

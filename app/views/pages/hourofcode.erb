@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<!--[if IE 9 ]><html class="ie ie9 no-js" lang="en"><![endif]-->
+<!--[if gt IE 9 | !IE]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>TDPJ</title>
+  <meta name="description" content="A bunch of free EdTech tools made by real life teachers.">
+  <meta name="keywords" content="EdTech, Free, Discussion Boards, Timeline">
+  <meta name="author" content="Jeff Maxim">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="icon" href="assets/img/favicon.ico">
+
+  <%= stylesheet_link_tag "landing/bootstrap.min" %>
+  <%= stylesheet_link_tag "landing/vendor" %>
+  <%= stylesheet_link_tag "landing/style" %>
+  <%= stylesheet_link_tag "landing/hoc_custom" %>
+  <!--[if lte IE 9]><!-->
+  <%= javascript_include_tag "landing/vendor/html5shiv.min.js" %>
+  <!--<![endif]-->
+</head>
+<body>
+
+  <div class="site">
+    <div class="site-loader">
+      <div class="site-loader-spinner"></div>
+    </div> <!-- .site-loader -->
+
+    <div class="site-canvas">
+      <header class="site-header">
+        <nav class="navbar navbar-theme">
+          <div class="container">
+            <div class="navbar-header">
+
+              <div class="navbar-brand-wrap">
+                <a class="navbar-brand" href="/">
+                  <%= image_tag("site-header-logo-2.png") %>
+                </a>
+              </div>
+            </div> <!-- .navbar-header -->
+
+
+          </div>
+        </nav>
+      </header> <!-- .site-header -->
+      <main class="site-main">
+        <div id="intro" class="section block-default align-c-xs-max">
+          <div class="container">
+            <div class="row row-table">
+              <div class="col-sm-12">
+                <div class="col-inner">
+                  <div class="section-heading">
+                    <h2>Hour of Code!</h2>
+                    <p>
+                      Today you'll learn about <b>Hour of Code</b> and how to implement it in your classroom. This website will live here forever, so you can some back and use
+                      these resources whenever you want :)
+                    </p>
+                    <p>
+                      If there's some typos, I apologize, but you can correct
+                      them <a target='_blank' href='https://github.com/jeffthemaximum/Teachers-Dont-Pay-Jeff'>here</a> if you want.
+                    </p>
+                    <p>
+                      You can learn more about me <a target='_blank' href='https://www.linkedin.com/in/jeffmaxim/'>here!</a>
+                    </p>
+                    <h4>
+                      tl;dr
+                    </h4>
+                    <ul>
+                      <li>
+                        What is Hour of Code?
+                      </li>
+                      <li>
+                        What can I do for Hour of Code?
+                      </li>
+                      <li>
+                        What are the associated standards?
+                      </li>
+                      <li>
+                        Why teach coding?
+                      </li>
+                      <li>
+                        How does coding progress from K-5 and beyond?
+                      </li>
+                      <li>
+                        You don't have to know how to code to teach how to code!
+                      </li>
+                      <li>
+                        No connection to math skills. Many kids will surprise you. No "special" intellectual ability needed.
+                      </li>
+                      <li>
+                        Coding vs. Computer Science
+                      </li>
+                      <li>
+                        Doing and Discovery works best
+                      </li>
+                      <li>
+                        How to keep momentum after Hour of Code?
+                      </li>
+
+                    </ul>
+                  </div> <!-- .section-heading -->
+                </div>
+              </div>
+              <div class="col-sm-6 m-t-60-xs-max p-l-60-md-min">
+                <div class="col-inner clearfix">
+                  <%= image_tag("hoc-8.jpg", class: "img-responsive float-r-sm-min m-x-auto-xs-max", data: {sr: "right"}) %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> <!-- #brief_1 -->
+
+        <div id="brief_2" class="section block-warning align-c-xs-max">
+          <div class="container">
+            <div class="row row-table">
+              <div class="col-sm-6 m-b-60-xs-max p-r-60-md-min">
+                <div class="col-inner clearfix">
+                  <%= image_tag("hoc-10.jpg", class: "img-responsive float-l-sm-min m-x-auto-xs-max", data: {sr: "left"}) %>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="col-inner">
+                  <div class="section-heading">
+                    <h2>What is Hour of Code?</h2>
+                  </div> <!-- .section-heading -->
+                  <div class="section-content">
+                    <ul>
+                      <li>
+                        The main hour of code website is <a target='_blank' href='https://hourofcode.com/us'>here</a>
+                      </li>
+                      <li>
+                        The intro video is <a target='_blank' href='https://youtu.be/SrnvvWDm73k'>here</a>
+                      </li>
+                      <li>
+                        The activities are <a target='_blank' href='https://hourofcode.com/us/learn'>here</a>. You can filter by
+                        age, grade, experience level, and many other things.
+                      </li>
+                      <li>
+                        My favorite are the Social Studies and Language Arts activities!
+                      </li>
+                      <li>
+                        Use those activities above and try it out! You have 10 minutes. This is your DO NOW!
+                        Can't one to choose? Try this one <a target='_blank' href='https://game.kodable.com/hour-of-code'>here</a>.
+                      </li>
+                    </ul>
+                  </div> <!-- .section-content -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> <!-- #brief_2 -->
+
+        <div id="brief_3" class="section block-success align-c-xs-max">
+          <div class="container">
+            <div class="row row-table">
+              <div class="col-sm-6">
+                <div class="col-inner">
+                  <div class="section-heading">
+                    <h2>What can I do for Hour of Code?</h2>
+                    <p>What activities did you like? Which didn't you like? Why?</p>
+                    <p>Share them <a target='_blank' href='https://docs.google.com/spreadsheets/d/1626JDeYUN5hm7s_z3DoH65ZrjAhXGcxLgi9Ibx02saQ/edit?usp=sharing'>here</a></p>
+                    <p>You have 5-10 minutes!</p>
+                  </div> <!-- .section-heading -->
+                </div>
+              </div>
+              <div class="col-sm-6 m-t-60-xs-max p-l-60-md-min">
+                <div class="col-inner clearfix">
+                  <%= image_tag("hoc-9.jpg", class: "img-responsive float-r-sm-min m-x-auto-xs-max", data: {sr: "right"}) %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> <!-- #brief_3 -->
+
+        <div id="brief_2" class="section block-pink align-c-xs-max">
+          <div class="container">
+            <div class="row row-table">
+              <div class="col-sm-6 m-b-60-xs-max p-r-60-md-min">
+                <div class="col-inner clearfix">
+                  <%= image_tag("hoc-11.jpg", class: "img-responsive float-l-sm-min m-x-auto-xs-max", data: {sr: "left"}) %>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="col-inner">
+                  <div class="section-heading">
+                    <h2>What are the associated standards?</h2>
+                  </div> <!-- .section-heading -->
+                  <div class="section-content">
+                    <p>
+                      Standards are available from many different organizations.
+                      My favorite are from K12CS and are available <a target='_blank' href='https://k12cs.org/framework-statements-by-grade-band/'>here</a>.
+                    </p>
+                    <p>
+                      These are also the standards adopted by <a target='_blank' href='https://csnyc.org/'>CSYNC</a>
+                    </p>
+                    <p>
+                      <b>Concepts</b>
+                    </p>
+                    <ul>
+                      <li>
+                        Computing and systems
+                      </li>
+                      <li>
+                        Networks and the internet
+                      </li>
+                      <li>
+                        Data and analysis
+                      </li>
+                      <li>
+                        Algorithms and programming
+                      </li>
+                      <li>
+                        Impacts of computing
+                      </li>
+                    </ul>
+                    <p>
+                      <b>Practices</b>
+                    </p>
+                    <ul>
+                      <li>
+                        Fostering an inclusive computimng culture.
+                      </li>
+                      <li>
+                        Collaborating around computing.
+                      </li>
+                      <li>
+                        Recognizing and defining computational problems.
+                      </li>
+                      <li>
+                        Developing and using abstractions.
+                      </li>
+                      <li>
+                        Creating computation artifacts.
+                      </li>
+                      <li>
+                        Testing and refining CA.
+                      </li>
+                      <li>
+                        Communicating about computing.
+                      </li>
+                    </ul>
+                    <p>
+                      <b>What surprises you about this list? What do you notice?</b>
+                    </p>
+                  </div> <!-- .section-content -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> <!-- #brief_2 -->
+
+        <div id="jeff" class="section block-default align-c-xs-max">
+          <div class="container">
+            <div class="row row-table">
+              <div class="col-sm-12">
+                <div class="col-inner">
+                  <div class="section-heading">
+                    <h2>Why teach coding?</h2>
+                    <ul>
+                      <li>
+                        <b>Economic and Workforce Development: </b>"We should teach coding because we need more software engineers..."
+                      </li>
+                      <li>
+                        <b>Citizen and Civic Engagement: </b>"Kids need to know how the digital world works in order to participate in it well."
+                      </li>
+                      <li>
+                        <b>Competencies and Literacies: </b>"Coding teaches kids systems thinking, an important higher order skill."
+                      </li>
+                      <li>
+                        <b>Equity and Social Justice: </b>"It will even the playing field for underrepresented students and close the digital divide."
+                      </li>
+                      <li>
+                        <b>School Reform and Improvement: </b>"Computer Science will introduce a project-based learning approach to schools."
+                      </li>
+                      <li>
+                        <b>Technological, Social, and Scientific Innovation: </b>"The more kids who learn CS, the more production of new knowledge and innovation."
+                      </li>
+                      <li>
+                        <b>Personal Agency, Joy, and Fulfillment: </b>"It's fun!"
+                      </li>
+                    </ul>
+                  </div> <!-- .section-heading -->
+                </div>
+              </div>
+              <div class="col-sm-6 m-t-60-xs-max p-l-60-md-min">
+                <div class="col-inner clearfix">
+                  <%= image_tag("hoc-7.jpg", class: "img-responsive float-r-sm-min m-x-auto-xs-max", data: {sr: "right"}) %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> <!-- #brief_1 -->
+
+        <div id="brief_2" class="section block-warning align-c-xs-max">
+          <div class="container">
+            <div class="row row-table">
+              <div class="col-sm-6 m-b-60-xs-max p-r-60-md-min">
+                <div class="col-inner clearfix">
+                  <%= image_tag("hoc-6.jpg", class: "img-responsive float-l-sm-min m-x-auto-xs-max", data: {sr: "left"}) %>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="col-inner">
+                  <div class="section-heading">
+                    <h2>How does coding progress from K-5 and beyond?</h2>
+                  </div> <!-- .section-heading -->
+                  <div class="section-content">
+                    <p>
+                      Teaching coding in elementary school is similar to teaching reading, in that grades K-2 lay a foundation on which grades 3-5 can build on.
+                      In reading education we teach phonics and fluency in younger grade, and we teach start reading longer books in 3-5. With coding, the idea
+                      is to build foundational skills in younger grades and then start to actually build stuff in older grades.
+                    </p>
+                    <p>
+                      The end goal is to be able to build stuff in Scratch by the end of elementary school, <a target='_blank' href='https://scratch.mit.edu/projects/77529740/'>like this</a>.
+                    </p>
+                    <p>
+                      <ul>
+                      <li>
+                        <b>PreK - 1: </b>Teachers integrate computational thinking into existing class lessons,  <a target='_blank' href='https://studio.code.org/s/course1/stage/12/puzzle/1'>such as this</a>.
+                      </li>
+                      <li>
+                        <b>2: </b>Students explore Scratch Jr activities,  <a target='_blank' href='https://medium.com/scratchfoundation-blog/10-things-to-try-right-now-with-your-child-on-scratch-and-scratchjr-defd7f8ad0d1'>like these</a>.
+                      </li>
+                      <li>
+                        <b>3-5: </b>Students build programs with Scratch,  <a target='_blank' href='https://scratch.mit.edu/projects/25127030/'>like these</a>.
+                      </li>
+                      <li>
+                        <b>Beyond: </b>Students can build anything, the sky is the limit, <a target='_blank' href='https://ap.cs50.net/'>like this</a>.
+                      </li>
+                    </ul>
+                    </p>
+                  </div> <!-- .section-content -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> <!-- #brief_2 -->
+
+        <div id="brief_3" class="section block-success align-c-xs-max">
+          <div class="container">
+            <div class="row row-table">
+              <div class="col-sm-6">
+                <div class="col-inner">
+                  <div class="section-heading">
+                    <h2>You don't have to know how to code to teach how to code!</h2>
+                    <ul>
+                      <li>
+                        I started learning with my students and now am a professional software engineer at Aaptiv
+                        ( <a target='_blank' href='https://aaptiv.com?utm_source=teachersdontpayjeff'>signup here :-)</a> )
+                      </li>
+                      <li>
+                        Start by having students explore a tool, like <a target='_blank' href='https://www.scratchjr.org/'>Scratch Jr</a>.
+                      </li>
+                      <li>
+                        Once a student discovers something, have them share it with the class.
+                      </li>
+                    </ul>
+                  </div> <!-- .section-heading -->
+                </div>
+              </div>
+              <div class="col-sm-6 m-t-60-xs-max p-l-60-md-min">
+                <div class="col-inner clearfix">
+                  <%= image_tag("hoc-5.jpg", class: "img-responsive float-r-sm-min m-x-auto-xs-max", data: {sr: "right"}) %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> <!-- #brief_3 -->
+
+        <div id="brief_2" class="section block-pink align-c-xs-max">
+          <div class="container">
+            <div class="row row-table">
+              <div class="col-sm-6 m-b-60-xs-max p-r-60-md-min">
+                <div class="col-inner clearfix">
+                  <%= image_tag("hoc-3.jpg", class: "img-responsive float-l-sm-min m-x-auto-xs-max", data: {sr: "left"}) %>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="col-inner">
+                  <div class="section-heading">
+                    <h2>No connection to math skills. Many kids will surprise you. No "special" intellectual ability needed.</h2>
+                  </div> <!-- .section-heading -->
+                  <div class="section-content">
+                    <p><b>DO NOT</b> think for a second that certain kids are or aren't more inclined to excel at coding than others, for any reason. If you learn nothing else today, remember that.</p>
+                    <p>Isaac H. couldn't read at the beginning of 5th grade and could write C by the end of 6th grade.</p>
+                    <p>Learning to code is no harder than learning anything else, which you can <a href="http://byteacademy.co/why-is-learning-to-code-so-hard/" target="_blank">read about here</a>.
+                  </div> <!-- .section-content -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> <!-- #brief_2 -->
+
+        <div id="jeff" class="section block-default align-c-xs-max">
+          <div class="container">
+            <div class="row row-table">
+              <div class="col-sm-12">
+                <div class="col-inner">
+                  <div class="section-heading">
+                    <h2>Coding vs. Computer Science</h2>
+                    <p>Coding is like spelling, grammar, and punctuation. Computer science is like studying English.</p>
+                    <p><a href="https://www.facebook.com/frey.maxim" target="_blank">This blog gives a more detailed explanation</a>.</p>
+                    <p>Educators sometimes use these terms interchangeably, but engineers use them to mean different things.</p>
+                  </div> <!-- .section-heading -->
+                </div>
+              </div>
+              <div class="col-sm-6 m-t-60-xs-max p-l-60-md-min">
+                <div class="col-inner clearfix">
+                  <%= image_tag("hoc-4.jpg", class: "img-responsive float-r-sm-min m-x-auto-xs-max", data: {sr: "right"}) %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="brief_2" class="section block-warning align-c-xs-max">
+          <div class="container">
+            <div class="row row-table">
+              <div class="col-sm-6 m-b-60-xs-max p-r-60-md-min">
+                <div class="col-inner clearfix">
+                  <%= image_tag("hoc-2.jpg", class: "img-responsive float-l-sm-min m-x-auto-xs-max", data: {sr: "left"}) %>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="col-inner">
+                  <div class="section-heading">
+                    <h2>Doing and Discovery works best</h2>
+                  </div> <!-- .section-heading -->
+                  <div class="section-content">
+                    <p>
+                      Learning to code is like learning the guitar. I could talk to you about how to play guitar all day long.
+                      Then, if you picked up a guitar, you'd still be terrible at playing it. You can't really 'study' coding,
+                      you have to just sit at a computer and do it through a process of discovery.
+                    </p>
+                  </div> <!-- .section-content -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> <!-- #brief_2 -->
+
+        <div id="brief_3" class="section block-success align-c-xs-max">
+          <div class="container">
+            <div class="row row-table">
+              <div class="col-sm-6">
+                <div class="col-inner">
+                  <div class="section-heading">
+                    <h2>How to keep momentum after Hour of Code?</h2>
+                    <p>Hour of Code is relatively easy. How do you keep that momentum going forward?</p>
+                    <p>This is your <b>exit ticket</b>!</p>
+                    <p>
+                      <b>One of my ideas: </b>Students read a short story, or a selection (such as a chapter)
+                      from a longer chapter book. After reading the passage, the students will create a Scratch
+                      project such as this one <a href="https://scratch.mit.edu/projects/161842058/" target="_blank">https://scratch.mit.edu/projects/161842058/</a> ... The idea is that
+                      the student create a 'play' in Scratch with characters and scenery that summarizes the key
+                      events of the passage they just read.
+                    </p>
+                    <p>Share your ideas <a target='_blank' href='https://docs.google.com/spreadsheets/d/1BbFdCsBW_iO4KflJEeYOfZwTclupA1VVlC-qJXEKdT8/edit?usp=sharing'>here</a>.</p>
+                    <p>You have 5-10 minutes!</p>
+                  </div> <!-- .section-heading -->
+                </div>
+              </div>
+              <div class="col-sm-6 m-t-60-xs-max p-l-60-md-min">
+                <div class="col-inner clearfix">
+                  <%= image_tag("hoc-1.jpg", class: "img-responsive float-r-sm-min m-x-auto-xs-max", data: {sr: "right"}) %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> <!-- #brief_3 -->
+
+
+
+        <div id="contact" class="section block-default">
+          <div class="container">
+            <div class="section-heading text-center">
+
+              <h2>Get in touch with us</h2>
+              <p> Did you love this info about <b>Hour of Code</b>? Hate it? Have a question? Let me know :)</p>
+            </div>
+            <div class="row section-content m-t-60-sm-min">
+              <div class="col-sm-6 col-md-5">
+                <div class="col-inner">
+
+                  <div class="icon-box _left">
+                    <div class="icon-box-media">
+                      <%= image_tag("icon/mail.png", data: {sr: "bottom"}) %>
+                    </div>
+                    <div class="icon-box-heading">
+                      <h4>Email Address</h4>
+                    </div>
+                    <div class="icon-box-content font-sub font-italic">
+                      <span>frey.maxim@gmail.com</span>
+                      <br>
+                      <span>jeff@mrmaxim.org</span>
+                    </div>
+                  </div>
+
+                  <div class="icon-box _left">
+                    <div class="icon-box-media">
+                      <%= image_tag("icon/pin.png", data: {sr: "bottom"}) %>
+                    </div>
+                    <div class="icon-box-heading">
+                      <h4>Address</h4>
+                    </div>
+                    <div class="icon-box-content font-sub font-italic">
+                      <span>305 West 92nd Street</span>
+                      <br>
+                      <span>New York, NY 10025</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-offset-1 m-t-60-xs-max">
+                <div class="col-inner">
+                  <%= form_for @contact_request, :html => {:class => '_default', :id => 'contactForm'} do |f| %>
+                    <div class="form-group required">
+                      <label class="form-label" for="contactName">Your name</label>
+                      <%= f.text_field :name, class: "form-control", id: "contactName" %>
+                    </div>
+                    <div class="form-group required">
+                      <label class="form-label" for="contactEmail">Email address</label>
+                      <%= f.text_field :email, class: "form-control", id: "contactName" %>
+                    </div>
+                    <div class="form-group required">
+                      <label class="form-label" for="contactMessage">Message</label>
+                      <%= f.text_area :message, class: "form-control", id: "contactName", rows: 4 %>
+                    </div>
+                    <div class="btn-wrap">
+                      <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                    </div>
+                    <div class="form-notify"></div>
+                  </form> <!-- #contactForm -->
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div> <!-- #contact -->
+        <div id="map-canvas"></div> <!-- #map-canvas -->
+      </main> <!-- .site-main -->
+      <footer class="site-footer block-invert">
+        <div class="container">
+          <%= image_tag("site-header-logo-2.png", class: "site-footer-logo img-responsive", data: {sr: "bottom"}) %>
+          <ul class="site-footer-social-list">
+            <li><a href="https://www.facebook.com/frey.maxim" target="_blank">Facebook</a></li>
+            <li><a href="https://twitter.com/jeffthemaximum" target="_blank">Twitter</a></li>
+            <li><a href="https://www.instagram.com/jeffthemaximum/" target="_blank">Instagram</a></li>
+            <li><a href="https://www.linkedin.com/in/jeffmaxim/" target="_blank">LinkedIn</a></li>
+          </ul>
+          <p class="site-footer-copyright">2017 © <a href="#" target="_blank">Jeff Maxim</a> | all rights reserved.</p>
+        </div>
+      </footer> <!-- .site-footer -->
+    </div>
+  </div>
+
+  <%= javascript_include_tag "landing/vendor/jquery-1.11.3.min.js" %>
+  <%= javascript_include_tag "landing/vendor/bootstrap.min.js" %>
+  <%= javascript_include_tag "landing/vendor/plugin.js" %>
+  <%= javascript_include_tag "landing/variable.js" %>
+  <%= javascript_include_tag "landing/main.js" %>
+
+<% if Rails.env == "production"  %>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-54793829-7', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+<% end %>
+
+</body>
+</html>
