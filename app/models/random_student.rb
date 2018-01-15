@@ -9,6 +9,7 @@ class RandomStudent < ApplicationRecord
 
   def unpick!
     self.picked = false
+    self.unpicked_at = DateTime.now
     self.save!
   end
 end

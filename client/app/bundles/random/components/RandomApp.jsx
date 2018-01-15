@@ -102,8 +102,30 @@ const RandomApp = React.createClass({
     });
   },
 
-  render() {
+  redoPick() {
+    this.setState({ submitting: true });
+    const requestConfig = {
+      responseType: 'json',
+      headers: ReactOnRails.authenticityHeaders(),
+    }
+    const data = {
+      randomListId: this.state.randomList.id,
+    }
+    axios.post('/random_lists/redo', data, requestConfig)
+    .then((response) => {
+      this.setState({
+        randomList: response.data,
+        submitting: false,
+      });
+    })
+    .catch((error) => {
+      // TODO error messaging
+      console.log(error);
+      this.setState({ saving: false });
+    });
+  },
 
+  render() {
     return (
       <div>
         <Grid>
@@ -123,6 +145,12 @@ const RandomApp = React.createClass({
                     onClick={this.undoPick}
                   >
                     Undo
+                  </Button>
+                  <Button
+                    bsStyle="warning"
+                    onClick={this.redoPick}
+                  >
+                    Redo
                   </Button>
                 </ButtonToolbar>
               </Jumbotron>

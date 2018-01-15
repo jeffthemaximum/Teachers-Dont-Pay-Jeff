@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   get '/random', to: "random_lists#index"
   post '/random_lists/pick', to: "random_lists#pick"
   post '/random_lists/undo', to: 'random_lists#undo'
+  post '/random_lists/redo', to: 'random_lists#redo'
 
   # random stuff
   get '/hourofcode', to: "pages#hourofcode"
